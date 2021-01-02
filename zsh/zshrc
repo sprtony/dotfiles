@@ -1,0 +1,49 @@
+# Fix the Java Problem
+export _JAVA_AWT_WM_NONREPARENTING=1
+export ComposerPath=$HOME/.config/composer/vendor/bin
+export M2_HOME="/opt/apache-maven-3.6.2"
+export YARN_HOME="$(yarn global bin)"
+
+export PATH=$YARN_HOME:$M2_HOME/bin:$HOME/bin:/usr/local/bin:$PATH
+export TERM="xterm-256color"
+export ZSH="/home/quimaira3/.oh-my-zsh"
+
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{014}\u2570%F{cyan}\uF460%F{073}\uF460%F{109}\uF460%f "
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="cleared"
+POWERLEVEL9K_USER_ICON="\uF415"
+POWERLEVEL9K_USER_DEFAULT_BACKGROUND="cleared"
+POWERLEVEL9K_USER_DEFAULT_FOREGROUND="mediumspringgreen"
+
+POWERLEVEL9K_RVM_BACKGROUND="red"
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon user dir vcs dir_writable)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rvm nvm virtualenv)
+
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+plugins=(
+	git
+	archlinux
+	sudo
+	composer
+	node
+	nvm
+	npm
+	laravel
+	laravel5
+	colored-man-pages
+	zsh-autosuggestions
+	zsh-syntax-highlighting
+	zsh-completions
+	zsh-nvm
+	)
+autoload -U compinit && compinit
+source $ZSH/oh-my-zsh.sh
+
+if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
+
+export PATH="$PATH:$HOME/.rvm/bin"
+source $HOME/.rvm/scripts/rvm

@@ -1,0 +1,23 @@
+#! /bin/sh
+
+if [ -x $HOME/bin/own_script_bspwm_laptop_dual_monitor ];then
+    own_script_bspwm_laptop_dual_monitor
+fi
+
+
+pgrep -x sxhkd > /dev/null || sxhkd &
+#taclado a español
+setxkbmap -layout 'es,es' &
+feh --bg-fill /home/quimaira3/Pictures/Arch_WallPaper.jpg &
+~/.config/polybar/launch.sh &
+
+
+bspc monitor eDP1 -d 1 2 3 4 5
+bspc monitor HDMI1 -d 6 7 8 9 0
+
+bspc config border_width         2
+bspc config window_gap          12
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
