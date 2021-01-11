@@ -1,4 +1,7 @@
 # Colors (Gruvbox dark)
+font:
+    normal:
+        family: Hack Nerd Font
 colors:
   # Default colors
   primary:

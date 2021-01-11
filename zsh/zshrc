@@ -1,12 +1,17 @@
 # Fix the Java Problem
 export _JAVA_AWT_WM_NONREPARENTING=1
-export ComposerPath=$HOME/.config/composer/vendor/bin
+export DotConfig=$HOME/.config
+
+export ComposerPath=$DotConfig/composer/vendor/bin
 export M2_HOME="/opt/apache-maven-3.6.2"
 export YARN_HOME="$(yarn global bin)"
 
-export PATH=$YARN_HOME:$M2_HOME/bin:$HOME/bin:/usr/local/bin:$PATH
+export PATH=$DotConfig/scripts:$YARN_HOME:$M2_HOME/bin:$HOME/bin:/usr/local/bin:$PATH
 export TERM="xterm-256color"
 export ZSH="/home/quimaira3/.oh-my-zsh"
+
+export VISUAL=nvim;
+export EDITOR=nvim;
 
 POWERLEVEL9K_MODE='nerdfont-complete'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
@@ -43,7 +48,7 @@ plugins=(
 autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
-if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
+# if [ -f /usr/bin/screenfetch ]; then screenfetch; fi
 
 export PATH="$PATH:$HOME/.rvm/bin"
 source $HOME/.rvm/scripts/rvm

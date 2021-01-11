@@ -7,10 +7,11 @@ fi
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 #taclado a español
-setxkbmap -layout 'es,es' &
-feh --bg-fill /home/quimaira3/Pictures/Arch_WallPaper.jpg &
+setxkbmap -layout latam &
+feh --bg-fill /home/quimaira3/Pictures/Sweet-space.png &
 ~/.config/polybar/launch.sh &
-
+picom &
+dunst &
 
 bspc monitor eDP1 -d 1 2 3 4 5
 bspc monitor HDMI1 -d 6 7 8 9 0
