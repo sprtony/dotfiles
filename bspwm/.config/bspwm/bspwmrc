@@ -1,0 +1,38 @@
+#! /bin/sh
+
+if [ -x $HOME/bin/own_script_bspwm_laptop_dual_monitor ];then
+    own_script_bspwm_laptop_dual_monitor
+fi
+
+# Autostart applications
+sxhkd &
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+nitrogen --restore & 
+sleep 1 &
+picom -b &
+nm-applet &
+volumeicon &
+xfce4-power-manager &
+pamac-tray &
+clipit &
+#start_conky_maia &
+xautolock -time 10 -locker blurlock &
+ff-theme-util &
+fix_xcursor &
+~/.config/polybar/launch.sh &
+
+# dunst &
+#taclado a español
+# setxkbmap -layout latam &
+
+bspc monitor eDP-1 -d 1 2 3 4 5
+bspc monitor HDMI-1 -d 6 7 8 9 0
+
+bspc config border_width         2
+bspc config window_gap          12
+bspc config top_padding         0
+bspc config bottom_padding      2
+
+bspc config split_ratio          0.52
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true

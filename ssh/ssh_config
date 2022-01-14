@@ -1,0 +1,7 @@
+Host efe
+    HostName calzadoefe.com
+    User root
+
+Host sahara
+    HostName sahara.viajes
+    User root
