@@ -1,5 +1,5 @@
 {
-  "coc.preferences.formatOnSaveFiletypes": ["css", "php","markdown","sass", "pug", "jade", "js", "styl","blade","javascript","typescript","vue"],
+  "coc.preferences.formatOnSaveFiletypes": ["css", "php","markdown","sass", "pug", "jade", "js", "styl","blade","javascript","typescript","vue","dart"],
 
   // explorer
   "explorer.width": 30,

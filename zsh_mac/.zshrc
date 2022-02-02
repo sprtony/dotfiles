@@ -7,9 +7,10 @@ fi
 
 export ComposerPath=$HOME/.composer/vendor/bin
 export PHPPath=/usr/local/Cellar/php/7.4.2/bin
+export CURLPath=/usr/local/opt/curl/bin
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export FLUTTER_HOME=$HOME/Library/flutter/bin
-export PATH=$HOME/bin:/usr/local/bin:$PHPPath:$ComposerPath:$FLUTTER_HOME:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$CURLPath:$PHPPath:$ComposerPath:$FLUTTER_HOME:$PATH
 export TERM="xterm-256color"
 export ZSH="/Users/tony/.oh-my-zsh"
 

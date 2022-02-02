@@ -68,12 +68,26 @@ return packer.startup(function(use)
   use "nvim-telescope/telescope.nvim"
 
   -- Git
-  use "lewis6991/gitsigns.nvim"
+  -- use "lewis6991/gitsigns.nvim"
 
   use {"neoclide/coc.nvim", branch='release'}
 
   -- Laravel
   use "sheerun/vim-polyglot"
+  use "jwalton512/vim-blade"
+  use "tpope/vim-dispatch"             
+  use "tpope/vim-projectionist"        
+  use "noahfrederick/vim-composer"     
+  use "noahfrederick/vim-laravel"
+
+  -- Flutter
+  use "dart-lang/dart-vim-plugin"
+
+  --TEST
+  use "vim-test/vim-test"
+
+  --PUG
+  use "digitaltoad/vim-pug"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
