@@ -36,7 +36,7 @@ plugins=(
 	laravel
 	npm
 	node
-	osx
+	macos
 	sudo
 	yarn
 	zsh-autosuggestions
