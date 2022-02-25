@@ -4,15 +4,11 @@
   // explorer
   "explorer.width": 30,
   "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": true,
+  "explorer.previewAction.onHover": "labeling",
   "explorer.keyMappings.global": {
     "<cr>": ["expandable?", "expand", "open"],
     "v": "open:vsplit"
   },
-
-  //phpator
-  "phpactor.enable": true,
-  "phpactor.path": "phpactor",
 
   "suggest.completionItemKindLabels": {
       "method": "  ",

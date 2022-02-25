@@ -203,10 +203,5 @@ let g:coc_explorer_global_presets = {
 \   }
 \ }
 
-" let g:coc_filetype_map = {
-" \ 'blade': 'html',
-" \ }
-
 nmap <space>e :CocCommand explorer<CR>
-" nmap <space>f :CocCommand explorer --preset floating<CR>
 autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif

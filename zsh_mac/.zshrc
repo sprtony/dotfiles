@@ -6,11 +6,12 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ComposerPath=$HOME/.composer/vendor/bin
-export PHPPath=/usr/local/Cellar/php/7.4.2/bin
+export PHPPath="/usr/local/Cellar/php@7.4/7.4.27/bin"
+export MYSQLPath="/Users/Shared/DBngin/mysql/8.0.27/bin"
 export CURLPath=/usr/local/opt/curl/bin
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export FLUTTER_HOME=$HOME/Library/flutter/bin
-export PATH=$HOME/bin:/usr/local/bin:$CURLPath:$PHPPath:$ComposerPath:$FLUTTER_HOME:$PATH
+export PATH=$MYSQLPath:$HOME/bin:/usr/local/bin:$CURLPath:$PHPPath:$ComposerPath:$FLUTTER_HOME:$PATH
 export TERM="xterm-256color"
 export ZSH="/Users/tony/.oh-my-zsh"
 

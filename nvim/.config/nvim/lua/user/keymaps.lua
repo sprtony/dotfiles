@@ -63,7 +63,7 @@ keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
 keymap("n", "<Leader>w", ":w<CR>",opts)
 keymap("n", "<Leader>q", ":Bdelete<CR>",opts)
 
--- keymap("n", "ff", ":Telescope find_files<CR>",opts)
+keymap("n", "ff", ":Telescope find_files<CR>",opts)
 -- Terminal --
 -- Better terminal navigation
 -- keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
