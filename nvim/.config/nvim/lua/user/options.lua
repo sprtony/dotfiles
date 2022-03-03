@@ -33,6 +33,7 @@ local options = {
   scrolloff = 8,                           -- is one of my fav
   sidescrolloff = 8,
   guifont = "monospace:h17",               -- the font used in graphical neovim applications
+  list = true,
 }
 
 vim.opt.shortmess:append "c"
@@ -42,5 +43,6 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set whichwrap+=<,>,[,],h,l"
+vim.cmd "set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<"
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work

@@ -26,7 +26,7 @@ plugins=(
 	colored-man-pages
 	compleat
 	composer
-	copydir
+	copypath
 	copyfile
 	cp
 	copybuffer
