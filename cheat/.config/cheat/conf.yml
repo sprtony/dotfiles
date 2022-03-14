@@ -1,0 +1,22 @@
+---
+editor: nvim
+
+colorize: true
+
+style: monokai
+
+formatter: terminal16m
+
+pager: less -FRX
+
+cheatpaths:
+
+  # - name: community
+  #   path: /Users/tony/.config/cheat/cheatsheets/community
+  #   tags: [ community ]
+  #   readonly: true
+
+  - name: personal
+    path: /Users/tony/.config/cheat/cheatsheets/personal
+    tags: [ personal ]
+    readonly: false
