@@ -46,24 +46,23 @@ return packer.startup(function(use)
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
 
-  use "windwp/nvim-autopairs"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "ahmedkhalf/project.nvim"
-  use "lewis6991/impatient.nvim"
-  use "lukas-reineke/indent-blankline.nvim"
-  use "goolord/alpha-nvim"
+  -- Utilidades
+  use "moll/vim-bbye" -- Cerrar los buffers sin cerrar vim
+  use "ahmedkhalf/project.nvim" -- control de proyectos
+  use "lewis6991/impatient.nvim" -- Cache para lua
+  use "lukas-reineke/indent-blankline.nvim" -- lina blanca de las identaciones
+  use "goolord/alpha-nvim" -- pagina de inicio al nvim
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use "tpope/vim-commentary"
-  use "junegunn/rainbow_parentheses.vim"
-  use "mattn/emmet-vim"
-  use 'voldikss/vim-floaterm'
+  use 'voldikss/vim-floaterm' -- Terminal flotante
+
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
   use "lunarvim/darkplus.nvim"
   use "joshdick/onedark.vim"
 
+  -- manejo de line
+  use "akinsho/bufferline.nvim"
+  use "nvim-lualine/lualine.nvim"
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
@@ -71,6 +70,7 @@ return packer.startup(function(use)
   -- Git
   -- use "lewis6991/gitsigns.nvim"
 
+  -- COC
   use {"neoclide/coc.nvim", branch='release'}
 
   -- Laravel
@@ -80,6 +80,7 @@ return packer.startup(function(use)
   use "tpope/vim-projectionist"        
   use "noahfrederick/vim-composer"     
   use "noahfrederick/vim-laravel"
+  use "mattn/emmet-vim"
 
   -- Flutter
   use "dart-lang/dart-vim-plugin"
@@ -89,6 +90,15 @@ return packer.startup(function(use)
 
   --PUG
   use "digitaltoad/vim-pug"
+
+  --DAP
+  use "mfussenegger/nvim-dap"
+
+  --Strings
+  use "tpope/vim-surround"
+  use "windwp/nvim-autopairs"
+  use "junegunn/rainbow_parentheses.vim"
+  use "tpope/vim-commentary"
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
