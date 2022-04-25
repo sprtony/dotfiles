@@ -12,6 +12,9 @@ require "user.project"
 require "user.impatient"
 require "user.indentline"
 require "user.alpha"
+require "user.dap"
+require "user.cheetsheet"
+require "user.commandcenter"
 
 vim.cmd('source ~/.config/nvim/vim/coc.vim')
 vim.cmd('source ~/.config/nvim/vim/onedark.vim')

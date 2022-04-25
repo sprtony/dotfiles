@@ -45,6 +45,7 @@ return packer.startup(function(use)
   -- Library
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use {"nvim-treesitter/nvim-treesitter", run = ':TSUpdate'}
 
   -- Utilidades
   use "moll/vim-bbye" -- Cerrar los buffers sin cerrar vim
@@ -53,7 +54,8 @@ return packer.startup(function(use)
   use "lukas-reineke/indent-blankline.nvim" -- lina blanca de las identaciones
   use "goolord/alpha-nvim" -- pagina de inicio al nvim
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-  use 'voldikss/vim-floaterm' -- Terminal flotante
+  use "voldikss/vim-floaterm" -- Terminal flotante
+  use "ap/vim-css-color"
 
   -- Colorschemes
   -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
@@ -66,9 +68,22 @@ return packer.startup(function(use)
 
   -- Telescope
   use "nvim-telescope/telescope.nvim"
+  use "nvim-telescope/telescope-project.nvim"
+  use "nvim-telescope/telescope-media-files.nvim"
+  use "sudormrfbin/cheatsheet.nvim"
+  use {
+    "AckslD/nvim-neoclip.lua",
+    config = function()
+      require('neoclip').setup()
+    end
+  }
+  use "gfeiyou/command-center.nvim"
+  use "fannheyward/telescope-coc.nvim"
+  use "nvim-telescope/telescope-file-browser.nvim"
+  use "nvim-telescope/telescope-dap.nvim"
 
   -- Git
-  -- use "lewis6991/gitsigns.nvim"
+  use "kdheepak/lazygit.nvim"
 
   -- COC
   use {"neoclide/coc.nvim", branch='release'}
@@ -93,6 +108,7 @@ return packer.startup(function(use)
 
   --DAP
   use "mfussenegger/nvim-dap"
+  use "rcarriga/nvim-dap-ui"
 
   --Strings
   use "tpope/vim-surround"
