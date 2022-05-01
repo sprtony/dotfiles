@@ -37,6 +37,7 @@ local options = {
   list = true,
   foldmethod = "expr",
   foldexpr="nvim_treesitter#foldexpr()",
+  foldlevelstart=99,
   autoindent = true
 }
 

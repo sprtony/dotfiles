@@ -14,6 +14,30 @@ command_center.add({
   }, {
     description = "Abrir LazyGit",
     cmd = "<CMD>LazyGit<CR>"
+  }, {
+    description = "DEBUG continue",
+    cmd = "<CMD>lua require'dap'.continue()<CR>",
+    keybindings = { "n", "<F5>", noremap}
+  }, {
+    description = "DEBUG step over",
+    cmd = "<CMD>lua require'dap'.step_over()<CR>",
+    keybindings = { "n", "<F10>", noremap}
+  }, {
+    description = "DEBUG step into",
+    cmd = "<CMD>lua require'dap'.step_into()<CR>",
+    keybindings = { "n", "<F11>", noremap}
+  }, {
+    description = "DEBUG step out",
+    cmd = "<CMD>lua require'dap'.step_out()<CR>",
+    keybindings = { "n", "<F12>", noremap}
+  }, {
+    description = "DEBUG breakpoint",
+    cmd = "<CMD>lua require'dap'.toggle_breakpoint()<CR>",
+    keybindings = { "n", "<leader>b", noremap}
+  }, {
+    description = "DEBUG repl",
+    cmd = "<CMD>lua require'dap'.repl.open()<CR>",
+    keybindings = { "n", "<leader>dr", noremap}
   }
 }, command_center.mode.ADD_AND_REGISTER)
 

@@ -3,7 +3,7 @@ local dap = require "dap"
 dap.adapters.dart = {
     type = "executable",
     command = "node",
-    args = {os.getenv('HOME').."/repos/Dart-Code/out/dist/debug.js", "dart"}
+    args = {os.getenv('HOME').."/repos/Dart-Code/out/dist/debug.js", "flutter"}
     -- command= "dart",
     -- args = {"debug_adapter"}
 }
