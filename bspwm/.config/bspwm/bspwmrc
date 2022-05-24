@@ -1,37 +1,40 @@
 #! /bin/sh
 
-if [ -x $HOME/bin/own_script_bspwm_laptop_dual_monitor ];then
-    own_script_bspwm_laptop_dual_monitor
-fi
+MONITORES=$(xrandr --query | grep " connected" | grep -vc '^$')
 
 # Autostart applications
-sxhkd &
+# sxhkd &
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 nitrogen --restore & 
 sleep 1 &
 picom -b &
 nm-applet &
-volumeicon &
-xfce4-power-manager &
-pamac-tray &
-clipit &
+# volumeicon &
+# xfce4-power-manager &
+# pamac-tray &
 #start_conky_maia &
 xautolock -time 10 -locker blurlock &
-ff-theme-util &
-fix_xcursor &
 ~/.config/polybar/launch.sh &
+dunst &
 
-# dunst &
-#taclado a español
-# setxkbmap -layout latam &
+if [ $MONITORES = 2 ]; then
+    xrandr --output HDMI1 --auto --right-of eDP1 &
+    bspc monitor eDP1 -d 1 2 3 4 5
+    bspc monitor HDMI1 -d 6 7 8 9 0
+    setxkbmap -layout us -variant altgr-intl &
+    echo "us" > /tmp/current_kb
+else
+    bspc monitor eDP1 -d 1 2 3 4 5 6 7 8 9 0
+    setxkbmap -layout latam &
+    echo "latam" > /tmp/current_kb
+fi
 
-bspc monitor eDP-1 -d 1 2 3 4 5
-bspc monitor HDMI-1 -d 6 7 8 9 0
 
 bspc config border_width         2
 bspc config window_gap          12
 bspc config top_padding         0
 bspc config bottom_padding      2
+bspc config focused_border_color "#4bffdc"
 
 bspc config split_ratio          0.52
 bspc config borderless_monocle   true

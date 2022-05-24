@@ -4,11 +4,12 @@ super + Return
 
 # program launcher
 super + space
-	rofi -show run
+	rofi -show drun 
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
 
 #
 # bspwm hotkeys
@@ -18,33 +19,23 @@ super + Escape
 super + shift + {q,r}
 	bspc {quit,wm -r}
 
-# close and kill
-super + {_,shift + }w
-	bspc node -{c,k}
+# close 
+super + q
+	bspc node -c
 
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# send the newest marked node to the newest preselected node
-super + y
-	bspc node newest.marked.local -n newest.!automatic.local
-
-# swap the current node and the biggest window
-super + g
-	bspc node -s biggest.window
-
-#
-# state/flags
-#
-
 # set the window state
 super + {t,shift + t,s,f}
 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
-# set the node flags
-super + ctrl + {m,x,y,z}
-	bspc node -g {marked,locked,sticky,private}
+# set sticky
+super + y
+	bspc node -g sticky
+
+
 
 #
 # focus/swap
@@ -54,27 +45,9 @@ super + ctrl + {m,x,y,z}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
-# focus the node for the given path jump
-super + {p,b,comma,period}
-	bspc node -f @{parent,brother,first,second}
-
-# focus the next/previous window in the current desktop
-super + {_,shift + }c
-	bspc node -f {next,prev}.local.!hidden.window
-
 # focus the next/previous desktop in the current monitor
-super + bracket{left,right}
-	bspc desktop -f {prev,next}.local
-
-# focus the last node/desktop
-super + {grave,Tab}
-	bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-super + {o,i}
-	bspc wm -h off; \
-	bspc node {older,newer} -f; \
-	bspc wm -h on
+super + {Tab,shift + Tab}
+	bspc desktop -f {next,prev}.local
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
@@ -123,7 +96,7 @@ XF86MonBrightness{Up,Down}
 # 	setxkbmap -layout 'es,es'
 
 XF86Audio{Raise,Lower}Volume
-	amixer -q set Master 5{+,-}	
+	amixer set Master 5%{+,-}	
 
 XF86AudioMute
     $(amixer get Master | grep off > /dev/null && amixer -q set Master unmute) || amixer -q set Master mute

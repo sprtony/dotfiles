@@ -38,15 +38,26 @@ command_center.add({
     description = "DEBUG repl",
     cmd = "<CMD>lua require'dap'.repl.open()<CR>",
     keybindings = { "n", "<leader>dr", noremap}
+  }, {
+    description = "Flutter run",
+    cmd = "<CMD>CocCommand fltter.run<CR>",
+  }, {
+    description = "Flutter emulators",
+    cmd = "<CMD>CocCommand fltter.emulators<CR>",
+  }, {
+    description = "Flutter toggleOutline",
+    cmd = "<CMD>CocCommand fltter.toggleOutline<CR>",
+  }, {
+    description = "Flutter hotReload",
+    cmd = "<CMD>CocCommand fltter.dev.hotReload<CR>",
+  }, {
+    description = "Flutter hotRestart",
+    cmd = "<CMD>CocCommand fltter.dev.hotRestart<CR>",
   }
+
+
+
+
+
 }, command_center.mode.ADD_AND_REGISTER)
-
-
--- DAP
--- keymap("n", "<Leader>dc",":lua require'dap'.continue()<CR>",opts)
--- keymap("n", "<Leader>do",":lua require'dap'.step_out()<CR>",opts)
--- keymap("n", "<Leader>di",":lua require'dap'.step_into()<CR>",opts)
--- keymap("n", "<Leader>dv",":lua require'dap'.step_over()<CR>",opts)
--- keymap("n", "<Leader>db",":lua require'dap'.toggle_breakpoint()<CR>",opts)
--- keymap("n", "<Leader>dr",":lua require'dap'.repl.open()<CR>",opts)
 

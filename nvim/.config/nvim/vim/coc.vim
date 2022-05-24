@@ -40,7 +40,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-
 " Use <c-space> to trigger completion.
 if has('nvim')
   inoremap <silent><expr> <c-space> coc#refresh()
@@ -173,3 +172,8 @@ let g:coc_explorer_global_presets = {
 
 nmap <space>e :CocCommand explorer --preset floating<CR>
 " autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
+"
+" extensiones
+let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-explorer', 'coc-blade', 'coc-css', 'coc-emmet', 'coc-floaterm', 'coc-flutter-tools','coc-highlight','coc-html','coc-prettier','coc-sh','coc-snippets','coc-sql','coc-svg','coc-tsserver','coc-yank','@yaegassy/coc-intelephense','@yaegassy/coc-volar']
+
+xmap <leader>t  <Plug>(coc-convert-snippet)

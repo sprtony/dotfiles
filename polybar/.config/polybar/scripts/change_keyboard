@@ -1,0 +1,12 @@
+#!/bin/bash
+
+CURRENT_KB=$(cat /tmp/current_kb)
+
+if [ $CURRENT_KB = "latam" ]; then
+  setxkbmap -layout us -variant altgr-intl &
+  echo "us" > /tmp/current_kb
+else
+  setxkbmap -layout latam &
+  echo "latam" > /tmp/current_kb
+fi
+
