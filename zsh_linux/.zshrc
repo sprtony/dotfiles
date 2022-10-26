@@ -3,7 +3,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
-export TERM="xterm-kitty"
+# export TERM="xterm-kitty"
 export CHROME_EXECUTABLE=google-chrome-stable
 
 #Mis Variables
