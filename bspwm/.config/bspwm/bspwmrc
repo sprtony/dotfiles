@@ -3,13 +3,13 @@
 MONITORES=$(xrandr --query | grep " connected" | grep -vc '^$')
 
 if [ $MONITORES = 2 ]; then
-    xrandr --output HDMI1 --auto --left-of eDP1 &
-    bspc monitor HDMI1 -d I II III IV V VI
-    bspc monitor eDP1 -d VII VIII IX X
+    xrandr --output HDMI-1 --auto --left-of eDP-1 &
+    bspc monitor HDMI-1 -d I II III IV V VI
+    bspc monitor eDP-1 -d VII VIII IX X
     setxkbmap -layout us -variant altgr-intl &
     echo "us" > /tmp/current_kb
 else
-    bspc monitor eDP1 -d I II III IV V VI VII VIII IX X
+    bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
     setxkbmap -layout latam &
     echo "latam" > /tmp/current_kb
 fi
@@ -36,8 +36,6 @@ bspc config active_border_color         "#073642"
 #
 pgrep -x sxhkd > /dev/null || sxhkd &
 
-# Set display from arandr saved script
-sh ~/.screenlayout/monitor.sh &
 # Bar
 ~/.config/polybar/launch.sh &
 # Notifications
