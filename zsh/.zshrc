@@ -5,13 +5,25 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
 export TERM="xterm-kitty"
-export CHROME_EXECUTABLE=google-chrome-stable
+export CHROME_EXECUTABLE="google-chrome-stable"
+
+export ANDROID_HOME="/opt/android"
+export JAVA_HOME="/opt/openjdk/jdk-11.0.18+10"
 
 #Mis Variables
-export ComposerPath=$HOME/.config/composer/vendor/bin
-export ANDROID_HOME=$HOME/Android/Sdk
-export FLUTTER_HOME=/opt/flutter/bin
-export PATH=$HOME/.local/bin:$HOME/bin:/usr/local/bin:$CURLPath:$ComposerPath:$FLUTTER_HOME:$PATH
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+export PATH="$HOME/.cargo/env:$PATH"
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+export PATH="/opt/flutter/bin/:$PATH"
+export PATH="/opt/go/bin:$HOME/go/bin/:$PATH"
+
+export PATH="$ANDROID_HOME/cmdline-tools/tools/bin:$PATH"
+export PATH="$ANDROID_HOME/emulator:$PATH"
+export PATH="$ANDROID_HOME/platform-tools:$PATH"
+export PATH="$JAVA_HOME/bin:$PATH"
+
+
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -21,7 +33,6 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 
 plugins=(
 	sudo
-	archlinux
 
 	colorize
 	colored-man-pages
@@ -45,7 +56,6 @@ plugins=(
 
 	zsh-autosuggestions
 	zsh-syntax-highlighting
-	fzf-zsh-plugin
 )
 
 source $ZSH/oh-my-zsh.sh

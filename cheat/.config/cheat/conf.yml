@@ -10,13 +10,12 @@ formatter: terminal16m
 pager: less -FRX
 
 cheatpaths:
-
   # - name: community
-  #   path: /Users/tony/.config/cheat/cheatsheets/community
+  #   path: ~/.config/cheat/cheatsheets/community
   #   tags: [ community ]
   #   readonly: true
 
   - name: personal
-    path: /Users/tony/.config/cheat/cheatsheets/personal
-    tags: [ personal ]
+    path: ~/.config/cheat/cheatsheets/personal
+    tags: [personal]
     readonly: false

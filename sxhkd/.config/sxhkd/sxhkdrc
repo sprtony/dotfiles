@@ -105,11 +105,11 @@ XF86AudioMute
 
 # Brightness up
 XF86MonBrightnessUp
-  xbacklight -inc 5
+  brightnessctl s 5%+
 
 # And brightness down
 XF86MonBrightnessDown
-  xbacklight -dec 5
+  brightnessctl s 5%-
 
 # Screenshot
 Print
@@ -119,7 +119,7 @@ super + Print
   ~/.config/bspwm/scripts/screenshot.sh
 
 super + e 
-  thunar  
+  nautilus  
 
 super + F1
   ~/.config/bspwm/scripts/keybindings_rofi.sh
