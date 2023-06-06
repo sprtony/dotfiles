@@ -25,6 +25,7 @@ export PATH="$ANDROID_HOME/cmdline-tools/tools/bin:$PATH"
 export PATH="$ANDROID_HOME/emulator:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$JAVA_HOME/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 
 #plugins
 plug "zsh-users/zsh-autosuggestions"

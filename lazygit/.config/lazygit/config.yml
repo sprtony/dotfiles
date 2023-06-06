@@ -1,0 +1,18 @@
+gui:
+  showIcons: true
+
+customCommands:
+  - key: "<c-f>"
+    context: "global"
+    description: "upload files to ftp"
+    prompts:
+      - type: "menu"
+        title: "What action do you do?"
+        options:
+          - name: "push"
+            description: "push commits"
+            value: "push"
+          - name: "catchup"
+            description: "sync last commit"
+            value: "catchup"
+    command: "git ftp {{index .PromptResponses 0}}"
