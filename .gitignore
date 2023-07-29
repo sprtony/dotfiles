@@ -1,2 +1,3 @@
 nvim/.config/nvim/plugin/
 ranger/.config/ranger/plugins/
+lazygit/.config/lazygit/state.yml

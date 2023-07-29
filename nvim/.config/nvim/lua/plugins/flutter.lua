@@ -1,6 +1,11 @@
 return {
   "akinsho/flutter-tools.nvim",
-  dependencies = { "williamboman/mason-lspconfig.nvim", "nvim-lua/plenary.nvim" },
+  dependencies = {
+    "williamboman/mason-lspconfig.nvim",
+    "nvim-lua/plenary.nvim",
+    "stevearc/dressing.nvim",
+  },
+  lazy = false,
   event = "BufRead",
   config = function()
     require("flutter-tools").setup({
