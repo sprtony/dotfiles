@@ -9,7 +9,7 @@ fi
 #Mis Variables
 export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
-export TERM="xterm-kitty"
+export TERM="xterm-256color"
 export CHROME_EXECUTABLE="google-chrome-stable"
 export $BROWSER=$CHROME_EXECUTABLE
 export ANDROID_HOME="$HOME/Programas/android"
@@ -22,6 +22,7 @@ export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export PATH="$HOME/Programas/flutter/bin/:$PATH"
 export PATH="$HOME/Programas/go/bin:$HOME/go/bin/:$PATH"
+export PATH="$HOME/Programas/AndroidStudio/bin/:$PATH"
 export PATH="$ANDROID_HOME/cmdline-tools/tools/bin:$PATH"
 export PATH="$ANDROID_HOME/emulator:$PATH"
 export PATH="$ANDROID_HOME/platform-tools:$PATH"
