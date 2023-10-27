@@ -14,7 +14,6 @@ require("xpm").setup({
 		-- Let xpm manage itself
 		{ name = "dtomvan/xpm.xplr" },
 		{ name = "prncss-xyz/icons.xplr" },
-		{ name = "prncss-xyz/icons.xplr" },
 		{
 			name = "dtomvan/extra-icons.xplr",
 			after = function()
