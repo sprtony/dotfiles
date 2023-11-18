@@ -40,3 +40,9 @@ https://dandavison.github.io/delta/
 
 pspg
 https://github.com/okbob/pspg
+
+slides
+https://github.com/maaslalani/slides
+
+gobang
+https://github.com/TaKO8Ki/gobang
