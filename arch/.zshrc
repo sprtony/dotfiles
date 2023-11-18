@@ -10,8 +10,8 @@ fi
 export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
 export TERM="xterm-256color"
-export CHROME_EXECUTABLE="google-chrome-stable"
-export $BROWSER=$CHROME_EXECUTABLE
+#export CHROME_EXECUTABLE="google-chrome-stable"
+#export $BROWSER=$CHROME_EXECUTABLE
 export ANDROID_HOME="$HOME/Programas/android"
 export JAVA_HOME="$HOME/Programas/openjdk/jdk-11.0.18+10"
 
