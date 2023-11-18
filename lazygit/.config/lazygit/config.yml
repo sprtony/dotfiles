@@ -16,3 +16,8 @@ customCommands:
             description: "sync last commit"
             value: "catchup"
     command: "git ftp {{index .PromptResponses 0}}"
+
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
