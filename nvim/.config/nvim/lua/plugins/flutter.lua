@@ -7,7 +7,7 @@ return {
   },
   lazy = false,
   event = "BufRead",
-  config = function()
+  opts = function()
     require("flutter-tools").setup({
       server = {
         color = {
