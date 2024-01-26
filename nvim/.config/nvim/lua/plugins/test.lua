@@ -8,9 +8,13 @@ return {
     opts = {
       adapters = {
         "neotest-plenary",
-        "neotest-pest",
         "neotest-dart",
-        "neotest-phpunit",
+        -- "neotest-pest",
+        ["neotest-phpunit"] = {
+          filter_dirs = function()
+            return { ".git", "node_modules", "vendor" }
+          end,
+        },
       },
     },
   },

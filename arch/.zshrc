@@ -42,6 +42,7 @@ plug "hcgraf/zsh-sudo"
 #alias
 alias ls="lsd"
 alias cat="bat"
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
 #load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

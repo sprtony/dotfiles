@@ -2,52 +2,35 @@ return {
   {
     "neovim/nvim-lspconfig",
     opts = {
+      format = {
+        timeout_ms = 3200,
+      },
+      -- @type lspconfig.options
       servers = {
         intelephense = {
-          cmd = { "intelephense", "--stdio" },
-          filetypes = { "blade", "php" },
-        },
-        emmet_ls = {
-          cmd = { "emmet-ls", "--stdio" },
-          capabilities = vim.lsp.protocol.make_client_capabilities(),
-          filetypes = {
-            "astro",
-            "pug",
-            "astro-markdown",
-            "blade",
-            "html",
-            "markdown",
-            "php",
-            "css",
-            "sass",
-            "scss",
-            "javascript",
-            "typescript",
-            "vue",
-          },
-          init_options = {
-            html = {
-              options = {
-                ["bem.enabled"] = true,
+          filetypes = { "php", "blade" },
+          settings = {
+            intelephense = {
+              filetypes = { "php", "blade" },
+              files = {
+                associations = { "*.php", "*.blade.php" }, -- Associating .blade.php files as well
+                maxSize = 5000000,
               },
             },
           },
         },
-        tailwindcss = {
-          cmd = { "tailwindcss-language-server", "--stdio" },
+        emmet_language_server = {
           filetypes = {
-            "astro",
-            "astro-markdown",
-            "blade",
-            "html",
-            "markdown",
-            "php",
             "css",
+            "html",
+            "javascript",
+            "javascriptreact",
+            "less",
             "sass",
             "scss",
-            "javascript",
-            "typescript",
-            "vue",
+            "pug",
+            "typescriptreact",
+            "blade",
           },
         },
       },
