@@ -1,3 +1,7 @@
+#
+# wm independent hotkeys
+#
+
 # terminal emulator
 super + Return
 	kitty
@@ -8,45 +12,95 @@ super + space
                 -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
                 -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
 
+# show open window
+super + ctrl + d
+	rofi -modi drun -show window -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+
+# show ssh sesssions
+super + shift + d
+	rofi -modi drun -show ssh -line-padding 4 \
+                -columns 2 -padding 50 -hide-scrollbar -terminal xfce4-terminal \
+                -show-icons -drun-icon-theme "Qogir-dark" -font "Droid Sans Regular 10"
+
+# power-menu 
+super + shift + e
+     ~/.config/rofi/powermenu.sh
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
 
+#
+# bspwm hotkeys
+#
+
 # quit/restart bspwm
-super + shift + {q,r}
+super + alt + {q,r}
 	bspc {quit,wm -r}
 
-# close 
-super + q
-	bspc node -c
+# close and kill
+super + {_,shift + }q
+	bspc node -{c,k}
 
 # alternate between the tiled and monocle layout
 super + m
 	bspc desktop -l next
 
-# set the window state
-super + {t,shift + t,s,f}
-	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
-
 # send the newest marked node to the newest preselected node
 super + y
 	bspc node newest.marked.local -n newest.!automatic.local
 
+# swap the current node and the biggest window
+super + g
+	bspc node -s biggest.window
 
+#
+# state/flags
+#
 
+# set the window state
+super + {t,shift + t,s,f}
+	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+
+# set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+#
+# focus/swap
+#
 
 # focus the node in the given direction
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
 
+# focus the node for the given path jump
+super + {p,b,comma,period}
+	bspc node -f @{parent,brother,first,second}
+
 # focus the next/previous window in the current desktop
-super + {Tab,shift + Tab}
-	bspc node -f {next,prev}.local
+super + {_,shift + }c
+	bspc node -f {next,prev}.local.!hidden.window
+
+# focus the next/previous desktop in the current monitor
+super + bracket{left,right}
+	bspc desktop -f {prev,next}.local
+
+# focus the last node/desktop
+super + {grave,Tab}
+	bspc {node,desktop} -f last
+
+# focus the older or newer node in the focus history
+super + {o,i}
+	bspc wm -h off; \
+	bspc node {older,newer} -f; \
+	bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
-
 
 #
 # preselect
@@ -68,8 +122,7 @@ super + ctrl + space
 super + ctrl + shift + space
 	bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-
-
+#
 # move/resize
 #
 
@@ -105,11 +158,11 @@ XF86AudioMute
 
 # Brightness up
 XF86MonBrightnessUp
-  brightnessctl s 5%+
+  xbacklight -inc 5
 
 # And brightness down
 XF86MonBrightnessDown
-  brightnessctl s 5%-
+  xbacklight -dec 5
 
 # Screenshot
 Print
@@ -118,12 +171,12 @@ Print
 super + Print
   ~/.config/bspwm/scripts/screenshot.sh
 
-super + e 
-  nautilus  
+# Shortcuts
+super + w 
+  firefox
+
+super + n 
+  thunar  
 
 super + F1
   ~/.config/bspwm/scripts/keybindings_rofi.sh
-
-# power-menu 
-super + shift + e
-     ~/.config/rofi/powermenu.sh
