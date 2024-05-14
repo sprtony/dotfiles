@@ -2,6 +2,11 @@
 - zsh
 - stow
 - git-ftp
+- zip
+- unzip
+- 7zip
+- rip-grep
+- fd-find
 
 # [Zap](https://github.com/zap-zsh/zap)
 ```sh
