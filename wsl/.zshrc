@@ -12,10 +12,11 @@ export TERM="xterm-256color"
 
 #PATH
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.local/share/pnpm:$PATH"
 export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
 export PATH="$HOME/.cargo/env:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
-export PATH="/usr/local/go/bin:$HOME/go/bin/:$PATH"
+export PATH="$HOME/go/bin/:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
 export PATH="$HOME/.bun/bin:$PATH"
 
