@@ -2,25 +2,15 @@
   "workbench.startupEditor": "none",
   "workbench.colorTheme": "Catppuccin Mocha",
   "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.activityBar.location": "hidden",
   "editor.formatOnSave": true,
   "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
   "editor.fontFamily": "'FiraCode Nerd Font'",
   "editor.fontLigatures": true,
-  "security.workspace.trust.untrustedFiles": "open",
-  "workbench.activityBar.location": "hidden",
   "explorer.confirmDelete": false,
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[php]": {
-    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[scss]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
-  },
+  "security.workspace.trust.untrustedFiles": "open",
+  "git.confirmSync": false,
   "php.debug.executablePath": "C:/laragon/bin/php/php-8.3.7-nts-Win32-vs16-x64/php.exe",
   "activitusbar.views": [
     {
@@ -48,39 +38,13 @@
       "codicon": "extensions-view-icon"
     }
   ],
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
   "terminal.integrated.profiles.windows": {
     "PowerShell": {
       "source": "PowerShell",
       "icon": "terminal-powershell"
     },
-    "Command Prompt": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [],
-      "icon": "terminal-cmd"
-    },
-    "Git Bash": {
-      "source": "Git Bash"
-    },
-    "Cmder": {
-      "path": [
-        "${env:windir}\\Sysnative\\cmd.exe",
-        "${env:windir}\\System32\\cmd.exe"
-      ],
-      "args": [
-        "/k",
-        "C:\\laragon\\bin\\cmder\\vendor\\bin\\vscode_init.cmd"
-      ],
-      "icon": "terminal-cmd",
-      "color": "terminal.ansiGreen"
-    }
-  },
-  "terminal.integrated.defaultProfile.windows": "Cmder",
-  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "codeium.enableConfig": {
     "*": true,
@@ -89,6 +53,22 @@
   "tailwindCSS.includeLanguages": {
     "plaintext": "blade"
   },
-  "git.confirmSync": false,
-  "editor.minimap.enabled": false,
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
 }
