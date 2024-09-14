@@ -1,0 +1,94 @@
+{
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "editor.formatOnSave": true,
+  "editor.linkedEditing": true,
+  "editor.fontFamily": "'FiraCode Nerd Font'",
+  "editor.fontLigatures": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "workbench.activityBar.location": "hidden",
+  "explorer.confirmDelete": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[php]": {
+    "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "php.debug.executablePath": "C:/laragon/bin/php/php-8.3.7-nts-Win32-vs16-x64/php.exe",
+  "activitusbar.views": [
+    {
+      "name": "explorer",
+      "codicon": "explorer-view-icon"
+    },
+    {
+      "name": "remote-explorer",
+      "codicon": "remote-explorer-view-icon"
+    },
+    {
+      "name": "search",
+      "codicon": "search-view-icon"
+    },
+    {
+      "name": "scm",
+      "codicon": "source-control-view-icon"
+    },
+    {
+      "name": "debug",
+      "codicon": "run-view-icon"
+    },
+    {
+      "name": "extensions",
+      "codicon": "extensions-view-icon"
+    }
+  ],
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    },
+    "Git Bash": {
+      "source": "Git Bash"
+    },
+    "Cmder": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [
+        "/k",
+        "C:\\laragon\\bin\\cmder\\vendor\\bin\\vscode_init.cmd"
+      ],
+      "icon": "terminal-cmd",
+      "color": "terminal.ansiGreen"
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "Cmder",
+  "terminal.integrated.fontFamily": "'FiraCode Nerd Font'",
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "codeium.enableConfig": {
+    "*": true,
+    "properties": true
+  },
+  "tailwindCSS.includeLanguages": {
+    "plaintext": "blade"
+  },
+  "git.confirmSync": false,
+  "editor.minimap.enabled": false,
+}
