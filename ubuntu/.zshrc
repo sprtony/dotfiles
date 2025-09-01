@@ -58,3 +58,17 @@ fi
 if command -v zoxide &> /dev/null; then
   eval "$(zoxide init zsh)"
 fi
+
+if command -v fzf &> /dev/null; then
+  if [[ -f /usr/share/bash-completion/completions/fzf ]]; then
+    source /usr/share/bash-completion/completions/fzf
+  fi
+fi
+
+
+# bun completions
+[ -s "/home/quimaira/.bun/_bun" ] && source "/home/quimaira/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
