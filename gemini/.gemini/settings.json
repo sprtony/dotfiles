@@ -44,5 +44,7 @@
         "@liuyoshio/mcp-compass"
       ]
     }
-  }
+  },
+  "ideMode": true,
+  "hasSeenIdeIntegrationNudge": true
 }
