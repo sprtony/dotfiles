@@ -9,7 +9,7 @@ fi
 #Mis Variables
 # export _JAVA_AWT_WM_NONREPARENTING=1
 export EDITOR="nvim"
-# export TERM="xterm-256color"
+export TERM="xterm-256color"
 #export CHROME_EXECUTABLE="google-chrome-stable"
 #export $BROWSER=$CHROME_EXECUTABLE
 # export ANDROID_HOME="$HOME/Programas/android"
@@ -72,3 +72,11 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/quimaira/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
