@@ -3,3 +3,4 @@ nvim/.config/TabNine
 nvim/.config/composer
 ranger/.config/ranger/plugins/
 lazygit/.config/lazygit/state.yml
+gemini/.gemini/gcp*
