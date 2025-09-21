@@ -9,6 +9,13 @@
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem"]
     },
+    "mcp-openmemory": {
+      "command": "npx",
+      "args": ["@peakmojo/mcp-openmemory@latest"],
+      "env": {
+        "MEMORY_DB_PATH": "/home/quimaira/.gemini/mcp-memory.sqlite"
+      }
+    },
     "playwright": {
       "command": "pnpx",
       "args": ["@playwright/mcp@latest"]
