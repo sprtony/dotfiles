@@ -1,6 +1,13 @@
 {
   "selectedAuthType": "oauth-personal",
   "mcpServers": {
+    "oepnmemory": {
+      "command": "npx",
+      "args": ["/home/quimaira/Documentos/MCP/mcp-openmemory/server.js"],
+      "env": {
+        "MEMORY_DB_PATH": "/home/quimaira/.gemini/mcp-memory.sqlite"
+      }
+    },
     "sequential-thinking": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
@@ -8,13 +15,6 @@
     "filesystem": {
       "command": "npx",
       "args": ["-y", "@modelcontextprotocol/server-filesystem"]
-    },
-    "mcp-openmemory": {
-      "command": "npx",
-      "args": ["@peakmojo/mcp-openmemory@latest"],
-      "env": {
-        "MEMORY_DB_PATH": "/home/quimaira/.gemini/mcp-memory.sqlite"
-      }
     },
     "playwright": {
       "command": "pnpx",
@@ -52,6 +52,10 @@
         "run",
         "main.py"
       ]
+    },
+    "laravel-boost": {
+      "command": "php",
+      "args": ["artisan", "boost:mcp"]
     },
     "google-meet": {
       "command": "node",
