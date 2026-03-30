@@ -17,13 +17,14 @@ zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) 
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
-# [Go](https://go.dev/)
 
+# [Go](https://go.dev/)
 ```sh
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go
 ```
+
 # [Bat](https://github.com/sharkdp/bat)
 ```sh
 cargo install --locked bat
@@ -41,33 +42,14 @@ pacman -S bat-extras
 cargo install lsd
 ```
 
-# [Xplr](https://xplr.dev/)
-```sh
-cargo install xplr
-```
-
 # [Bob](https://github.com/MordechaiHadad/bob)
 ```sh
 cargo install bob-nvim
 ```
 
-# [Ouch](https://github.com/ouch-org/ouch)
-```sh
-cargo install ouch
-```
-
-# [Zellij](https://zellij.dev/)
-```sh
-cargo install zellij
-```
-
 # [Delta](https://dandavison.github.io/delta/introduction.html)
 ```sh
 cargo install git-delta
-```
-# [Termscp](https://termscp.veeso.dev/)
-```sh
-cargo install termscp
 ```
 
 # [Lazygit](https://github.com/jesseduffield/lazygit)
@@ -80,12 +62,3 @@ go install github.com/jesseduffield/lazygit@latest
 go install github.com/jesseduffield/lazydocker@latest
 ```
 
-# [Nb](https://github.com/xwmx/nb)
-```sh
-npm install -g nb.sh
-```
-
-# [Slides](https://github.com/maaslalani/slides)
-```sh
-go install github.com/maaslalani/slides@latest
-```
