@@ -1,24 +1,47 @@
 {
-  "selectedAuthType": "oauth-personal",
+  "general": {
+    "previewFeatures": true,
+    "preferredEditor": "neovim",
+    "sessionRetention": {
+      "warningAcknowledged": true,
+      "enabled": true,
+      "maxAge": "30d"
+    }
+  },
+  "security": {
+    "auth": {
+      "selectedType": "oauth-personal"
+    }
+  },
   "mcpServers": {
     "oepnmemory": {
       "command": "npx",
-      "args": ["/home/quimaira/Documentos/MCP/mcp-openmemory/server.js"],
+      "args": [
+        "/home/quimaira/Documentos/MCP/mcp-openmemory/server.js"
+      ],
       "env": {
         "MEMORY_DB_PATH": "/home/quimaira/.gemini/mcp-memory.sqlite"
       }
     },
     "sequential-thinking": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ]
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem"
+      ]
     },
     "playwright": {
       "command": "pnpx",
-      "args": ["@playwright/mcp@latest"]
+      "args": [
+        "@playwright/mcp@latest"
+      ]
     },
     "serena": {
       "command": "uvx",
@@ -38,11 +61,17 @@
     },
     "@magicuidesign/mcp": {
       "command": "npx",
-      "args": ["-y", "@magicuidesign/mcp@latest"]
+      "args": [
+        "-y",
+        "@magicuidesign/mcp@latest"
+      ]
     },
     "desktop-commander": {
       "command": "npx",
-      "args": ["-y", "@wonderwhy-er/desktop-commander@latest"]
+      "args": [
+        "-y",
+        "@wonderwhy-er/desktop-commander@latest"
+      ]
     },
     "whatsapp": {
       "command": "uv",
@@ -53,29 +82,11 @@
         "main.py"
       ]
     },
-    "laravel-boost": {
-      "command": "php",
-      "args": ["artisan", "boost:mcp"]
-    },
-    "google-meet": {
-      "command": "node",
-      "args": ["/home/quimaira/Documentos/MCP/google-meet/src/index.js"],
-      "env": {
-        "GOOGLE_MEET_CREDENTIALS_PATH": "/home/quimaira/Documentos/MCP/google-meet/credentials.json",
-        "GOOGLE_MEET_TOKEN_PATH": "/home/quimaira/Documentos/MCP/google-meet/token.json"
-      },
-      "disabled": false
-    },
-    "google-calendar": {
-      "command": "pnpx",
-      "args": ["@cocal/google-calendar-mcp"],
-      "env": {
-        "GOOGLE_OAUTH_CREDENTIALS": "/home/quimaira/.gemini/gcp-oauth.keys.json"
-      }
-    },
     "trello": {
       "command": "pnpx",
-      "args": ["@delorenj/mcp-server-trello"],
+      "args": [
+        "@delorenj/mcp-server-trello"
+      ],
       "env": {
         "TRELLO_API_KEY": "ef77660fffcd72994d242ecd6f1b39a4",
         "TRELLO_TOKEN": "ATTA35dc13d95a6fac8848658e9e10d7b716af5ec0265cd3191f62b02583c2444d477725347C"
@@ -83,16 +94,36 @@
     },
     "excel": {
       "command": "npx",
-      "args": ["--yes", "@negokaz/excel-mcp-server"],
+      "args": [
+        "--yes",
+        "@negokaz/excel-mcp-server"
+      ],
       "env": {
         "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
       }
     },
     "mcp-compass": {
       "command": "npx",
-      "args": ["-y", "@liuyoshio/mcp-compass"]
+      "args": [
+        "-y",
+        "@liuyoshio/mcp-compass"
+      ]
     }
   },
-  "ideMode": true,
-  "hasSeenIdeIntegrationNudge": true
+  "ui": {
+    "showHomeDirectoryWarning": false,
+    "showModelInfoInChat": true,
+    "showMemoryUsage": true
+  },
+  "tools": {
+    "shell": {
+      "showColor": true
+    }
+  },
+  "ide": {
+    "enabled": true
+  },
+  "experimental": {
+    "skills": true
+  }
 }
