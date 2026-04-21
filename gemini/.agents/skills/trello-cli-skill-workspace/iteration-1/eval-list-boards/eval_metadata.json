@@ -1,0 +1,17 @@
+{
+  "eval_id": 0,
+  "eval_name": "list-boards",
+  "prompt": "List all my Trello boards and tell me their names.",
+  "assertions": [
+    {
+      "text": "The agent uses `trello board:list` or equivalent command.",
+      "passed": null,
+      "evidence": ""
+    },
+    {
+      "text": "The agent correctly lists the names of the boards.",
+      "passed": null,
+      "evidence": ""
+    }
+  ]
+}

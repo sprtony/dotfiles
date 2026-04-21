@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {
+      "text": "The agent identifies the correct board and list names.",
+      "passed": false,
+      "evidence": "No output files found. Run was interrupted."
+    },
+    {
+      "text": "The agent uses `trello card:create` with correct arguments.",
+      "passed": false,
+      "evidence": "No commands found. Run was interrupted."
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 2,
+    "total": 2,
+    "pass_rate": 0.0
+  },
+  "timing": {
+    "total_duration_seconds": 25.0
+  }
+}

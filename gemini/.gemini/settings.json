@@ -14,65 +14,6 @@
     }
   },
   "mcpServers": {
-    "oepnmemory": {
-      "command": "npx",
-      "args": [
-        "/home/quimaira/Documentos/MCP/mcp-openmemory/server.js"
-      ],
-      "env": {
-        "MEMORY_DB_PATH": "/home/quimaira/.gemini/mcp-memory.sqlite"
-      }
-    },
-    "sequential-thinking": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ]
-    },
-    "filesystem": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-filesystem"
-      ]
-    },
-    "playwright": {
-      "command": "pnpx",
-      "args": [
-        "@playwright/mcp@latest"
-      ]
-    },
-    "serena": {
-      "command": "uvx",
-      "args": [
-        "--from",
-        "git+https://github.com/oraios/serena",
-        "serena",
-        "start-mcp-server"
-      ]
-    },
-    "context7": {
-      "httpUrl": "https://mcp.context7.com/mcp",
-      "headers": {
-        "CONTEXT7_API_KEY": "ctx7sk-21a6783a-3084-4774-9a5d-163187a0f982",
-        "Accept": "application/json, text/event-stream"
-      }
-    },
-    "@magicuidesign/mcp": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@magicuidesign/mcp@latest"
-      ]
-    },
-    "desktop-commander": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@wonderwhy-er/desktop-commander@latest"
-      ]
-    },
     "whatsapp": {
       "command": "uv",
       "args": [
@@ -80,33 +21,6 @@
         "/home/quimaira/Documentos/MCP/whatsapp-mcp/whatsapp-mcp-server",
         "run",
         "main.py"
-      ]
-    },
-    "trello": {
-      "command": "pnpx",
-      "args": [
-        "@delorenj/mcp-server-trello"
-      ],
-      "env": {
-        "TRELLO_API_KEY": "ef77660fffcd72994d242ecd6f1b39a4",
-        "TRELLO_TOKEN": "ATTA35dc13d95a6fac8848658e9e10d7b716af5ec0265cd3191f62b02583c2444d477725347C"
-      }
-    },
-    "excel": {
-      "command": "npx",
-      "args": [
-        "--yes",
-        "@negokaz/excel-mcp-server"
-      ],
-      "env": {
-        "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
-      }
-    },
-    "mcp-compass": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@liuyoshio/mcp-compass"
       ]
     }
   },

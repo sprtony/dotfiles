@@ -1,0 +1,2 @@
+#!/bin/sh
+exec /home/quimaira/.local/share/uv/tools/mcp2cli/bin/mcp2cli @thinking "$@"

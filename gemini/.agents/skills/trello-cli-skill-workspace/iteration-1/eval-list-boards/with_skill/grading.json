@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {
+      "text": "The agent uses `trello board:list` or equivalent command.",
+      "passed": true,
+      "evidence": "commands.txt shows 'trello board:list' was used."
+    },
+    {
+      "text": "The agent correctly lists the names of the boards.",
+      "passed": true,
+      "evidence": "boards.txt lists the boards: Ajustes WEB, DESARROLLO, TeamDesarrollo."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0,
+    "total": 2,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_duration_seconds": 15.0
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "skill_name": "trello-cli-skill",
+  "evals": [
+    {
+      "id": 0,
+      "prompt": "List all my Trello boards and tell me their names.",
+      "expected_output": "A list of Trello board names retrieved via `trello board:list`.",
+      "files": []
+    },
+    {
+      "id": 1,
+      "prompt": "Create a new card named 'Test Skill Creator' in the 'To Do' list of my board 'Personal'.",
+      "expected_output": "The card 'Test Skill Creator' is created in the specified board and list.",
+      "files": []
+    }
+  ]
+}

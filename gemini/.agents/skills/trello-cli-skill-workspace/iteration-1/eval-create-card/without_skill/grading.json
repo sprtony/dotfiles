@@ -1,0 +1,23 @@
+{
+  "expectations": [
+    {
+      "text": "The agent identifies the correct board and list names.",
+      "passed": true,
+      "evidence": "confirmation.txt shows the agent searched for 'Personal' and 'To Do' and correctly used them (creating them when not found)."
+    },
+    {
+      "text": "The agent uses `trello card:create` with correct arguments.",
+      "passed": true,
+      "evidence": "confirmation.txt shows 'mcp_trello_add_card_to_list' was used with correctly identified IDs."
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0,
+    "total": 2,
+    "pass_rate": 1.0
+  },
+  "timing": {
+    "total_duration_seconds": 20.0
+  }
+}

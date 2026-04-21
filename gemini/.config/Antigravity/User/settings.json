@@ -65,5 +65,7 @@
   "[scss]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "Devdb.colorTheme": "dark"
+  "Devdb.colorTheme": "dark",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "terminal.external.linuxExec": "warp"
 }

@@ -1,0 +1,17 @@
+{
+  "eval_id": 1,
+  "eval_name": "create-card",
+  "prompt": "Create a new card named 'Test Skill Creator' in the 'To Do' list of my board 'Personal'.",
+  "assertions": [
+    {
+      "text": "The agent identifies the correct board and list names.",
+      "passed": null,
+      "evidence": ""
+    },
+    {
+      "text": "The agent uses `trello card:create` with correct arguments.",
+      "passed": null,
+      "evidence": ""
+    }
+  ]
+}

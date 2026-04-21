@@ -1,0 +1,7 @@
+Trello Boards:
+1. Ajustes WEB
+2. DESARROLLO
+3. TeamDesarrollo
+
+Commands used:
+- mcp_trello_list_boards()
