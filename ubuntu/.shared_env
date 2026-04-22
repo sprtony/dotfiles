@@ -1,0 +1,37 @@
+# PATHS Compartidos entre Bash y Zsh
+export EDITOR="nvim"
+export TERM="xterm-256color"
+
+# Rust / Cargo
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Composer
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
+# Bob (Neovim version manager)
+export PATH="$HOME/.local/share/bob/nvim-bin:$PATH"
+
+# Bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="$HOME/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# Brew (Linuxbrew)
+if [ -d "/home/linuxbrew/.linuxbrew" ]; then
+    eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
+
+# Opencode
+export PATH="$HOME/.opencode/bin:$PATH"
+
+# Local bin
+export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+
+# NVM (Carga estándar para Bash)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
