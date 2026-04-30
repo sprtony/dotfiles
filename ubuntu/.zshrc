@@ -44,3 +44,6 @@ fi
 
 # bun completions
 [ -s "/home/quimaira/.bun/_bun" ] && source "/home/quimaira/.bun/_bun"
+
+# opencode
+export PATH=/home/quimaira/.opencode/bin:$PATH
