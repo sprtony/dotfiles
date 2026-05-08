@@ -67,5 +67,6 @@
   },
   "Devdb.colorTheme": "dark",
   "editor.multiCursorModifier": "ctrlCmd",
-  "terminal.external.linuxExec": "warp"
+  "terminal.external.linuxExec": "warp",
+  "markdown-preview-enhanced.liveUpdate": true
 }

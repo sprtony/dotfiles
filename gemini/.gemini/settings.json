@@ -13,21 +13,23 @@
       "selectedType": "oauth-personal"
     }
   },
-  "mcpServers": {
-    "whatsapp": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/home/quimaira/Documentos/MCP/whatsapp-mcp/whatsapp-mcp-server",
-        "run",
-        "main.py"
-      ]
-    }
-  },
+  "mcpServers": {},
   "ui": {
     "showHomeDirectoryWarning": false,
     "showModelInfoInChat": true,
-    "showMemoryUsage": true
+    "showMemoryUsage": true,
+    "theme": "/home/quimaira/.gemini/themes/catppuccin-mocha.json",
+    "footer": {
+      "showLabels": true,
+      "items": [
+        "workspace",
+        "git-branch",
+        "model-name",
+        "quota",
+        "context-used",
+        "token-count"
+      ]
+    }
   },
   "tools": {
     "shell": {
