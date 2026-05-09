@@ -14,15 +14,6 @@
     }
   },
   "mcpServers": {
-    "whatsapp": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "/home/quimaira/Documentos/MCP/whatsapp-mcp/whatsapp-mcp-server",
-        "run",
-        "main.py"
-      ]
-    }
   },
   "ui": {
     "showHomeDirectoryWarning": false,
