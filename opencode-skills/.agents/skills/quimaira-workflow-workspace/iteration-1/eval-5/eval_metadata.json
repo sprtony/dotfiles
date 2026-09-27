@@ -1,0 +1,9 @@
+{
+  "eval_id": 5,
+  "eval_name": "book-structure",
+  "prompt": "¿Cómo se organiza un libro de BookStack para un proyecto de Quimaira?",
+  "assertions": [
+    "Lista Diseño, Desarrollo, Comunicaciones, Video, Administración, Minutas, Ideas/Propuestas",
+    "Asigna Ideas/Propuestas para versionar propuestas"
+  ]
+}

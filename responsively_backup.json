@@ -1,0 +1,46 @@
+{
+  "customDevices": [
+    {
+      "id": "ae93236f-be4a-4891-920f-7fc6f0fee1e0",
+      "name": "Full HD",
+      "width": 1920,
+      "height": 1080,
+      "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36",
+      "type": "notebook",
+      "dpr": 1,
+      "isTouchCapable": false,
+      "isMobileCapable": false,
+      "capabilities": [],
+      "isCustom": true
+    },
+    {
+      "id": "e00815ef-d5a4-40d1-84ae-2cf631bd8f61",
+      "name": "Ipad Landscape",
+      "width": 1024,
+      "height": 768,
+      "userAgent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
+      "type": "tablet",
+      "dpr": 1,
+      "isTouchCapable": true,
+      "isMobileCapable": true,
+      "capabilities": [
+        "touch",
+        "mobile"
+      ],
+      "isCustom": true
+    }
+  ],
+  "suites": [
+    {
+      "id": "default",
+      "name": "Default",
+      "devices": [
+        "10008",
+        "10013",
+        "e00815ef-d5a4-40d1-84ae-2cf631bd8f61",
+        "10015",
+        "ae93236f-be4a-4891-920f-7fc6f0fee1e0"
+      ]
+    }
+  ]
+}

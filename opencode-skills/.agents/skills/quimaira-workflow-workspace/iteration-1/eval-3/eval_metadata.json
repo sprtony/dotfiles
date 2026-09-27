@@ -1,0 +1,12 @@
+{
+  "eval_id": 3,
+  "eval_name": "deploy-steps",
+  "prompt": "¿Qué pasos sigues para desplegar el proyecto 'demo-cliente'?",
+  "assertions": [
+    "El primer paso es el build",
+    "Después de build hace commit",
+    "Ejecuta git ftp push",
+    "Mueve la tarea en Kanboard a Done",
+    "Actualiza Desarrollo > Estado Actual con el hash desplegado"
+  ]
+}

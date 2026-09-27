@@ -1,0 +1,11 @@
+{
+  "eval_id": 1,
+  "eval_name": "flow-summary",
+  "prompt": "¿Cuál es el flujo de trabajo de la agencia Quimaira?",
+  "assertions": [
+    "Menciona BookStack como fuente de verdad del proyecto",
+    "Menciona Kanboard con el proyecto 'Proyectos'",
+    "Menciona que el despliegue usa git-ftp",
+    "Indica que el build se hace antes del push"
+  ]
+}

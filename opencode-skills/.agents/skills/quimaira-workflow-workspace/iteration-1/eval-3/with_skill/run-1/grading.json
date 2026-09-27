@@ -1,0 +1,60 @@
+{
+  "expectations": [
+    {
+      "text": "El primer paso es el build",
+      "passed": true,
+      "evidence": "response.md: 'Orden estricto: build → commit → push'"
+    },
+    {
+      "text": "Después de build hace commit",
+      "passed": true,
+      "evidence": "response.md: paso 4 'Commit'"
+    },
+    {
+      "text": "Ejecuta git ftp push",
+      "passed": true,
+      "evidence": "response.md: 'Ejecutar git ftp push'"
+    },
+    {
+      "text": "Mueve la tarea en Kanboard a Done",
+      "passed": true,
+      "evidence": "response.md: 'Mover la tarea... columna Done'"
+    },
+    {
+      "text": "Actualiza Desarrollo > Estado Actual con el hash desplegado",
+      "passed": true,
+      "evidence": "response.md: 'Actualizar Desarrollo > Estado Actual con el último hash desplegado'"
+    }
+  ],
+  "summary": {
+    "passed": 5,
+    "failed": 0,
+    "total": 5,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 0,
+      "Write": 0,
+      "Bash": 0
+    },
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "outputs/response.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 942,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 0,
+    "total_duration_seconds": 0
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

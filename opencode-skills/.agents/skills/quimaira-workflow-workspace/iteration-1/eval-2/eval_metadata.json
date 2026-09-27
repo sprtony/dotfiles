@@ -1,0 +1,11 @@
+{
+  "eval_id": 2,
+  "eval_name": "new-project",
+  "prompt": "¿Cómo iniciarías un nuevo proyecto llamado 'Demo Cliente' en Quimaira?",
+  "assertions": [
+    "Convierte 'Demo Cliente' al slug 'demo-cliente'",
+    "Lista los 7 capítulos: Diseño, Desarrollo, Comunicaciones, Video, Administración, Minutas, Ideas/Propuestas",
+    "Crea el tag 'demo-cliente' en Kanboard proyecto 'Proyectos'",
+    "Ubica las credenciales en la página Administración > Credenciales"
+  ]
+}

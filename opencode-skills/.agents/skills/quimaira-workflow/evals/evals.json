@@ -1,0 +1,57 @@
+{
+  "skill_name": "quimaira-workflow",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "¿Cuál es el flujo de trabajo de la agencia Quimaira?",
+      "expected_output": "Un resumen que mencione BookStack como fuente de verdad, Kanboard como tablero, git-ftp para despliegues y que el build va antes del push.",
+      "expectations": [
+        "Menciona BookStack como fuente de verdad del proyecto",
+        "Menciona Kanboard con el proyecto 'Proyectos'",
+        "Menciona que el despliegue usa git-ftp",
+        "Indica que el build se hace antes del push"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "¿Cómo iniciarías un nuevo proyecto llamado 'Demo Cliente' en Quimaira?",
+      "expected_output": "Los pasos para crear el libro en BookStack con los 7 capítulos, el tag en Kanboard con el slug 'demo-cliente' y las páginas base.",
+      "expectations": [
+        "Convierte 'Demo Cliente' al slug 'demo-cliente'",
+        "Lista los 7 capítulos: Diseño, Desarrollo, Comunicaciones, Video, Administración, Minutas, Ideas/Propuestas",
+        "Crea el tag 'demo-cliente' en Kanboard proyecto 'Proyectos'",
+        "Ubica las credenciales en la página Administración > Credenciales"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "¿Qué pasos sigues para desplegar el proyecto 'demo-cliente'?",
+      "expected_output": "El orden build -> commit -> git ftp push, y luego actualizar Kanboard a Done y el Estado Actual en BookStack.",
+      "expectations": [
+        "El primer paso es el build",
+        "Después de build hace commit",
+        "Ejecuta git ftp push",
+        "Mueve la tarea en Kanboard a Done",
+        "Actualiza Desarrollo > Estado Actual con el hash desplegado"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "¿Dónde se guardan las credenciales de un proyecto en Quimaira?",
+      "expected_output": "La página Administración > Credenciales del libro de BookStack del proyecto.",
+      "expectations": [
+        "Señala la página Administración > Credenciales",
+        "Menciona BookStack"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "¿Cómo se organiza un libro de BookStack para un proyecto de Quimaira?",
+      "expected_output": "La lista de los 7 capítulos de la estructura del libro.",
+      "expectations": [
+        "Lista Diseño, Desarrollo, Comunicaciones, Video, Administración, Minutas, Ideas/Propuestas",
+        "Asigna Ideas/Propuestas para versionar propuestas"
+      ]
+    }
+  ]
+}

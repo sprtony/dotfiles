@@ -1,0 +1,60 @@
+{
+  "expectations": [
+    {
+      "text": "El primer paso es el build",
+      "passed": true,
+      "evidence": "response.md: paso 4 'Build' antes de commit y push"
+    },
+    {
+      "text": "Después de build hace commit",
+      "passed": true,
+      "evidence": "response.md: paso 6 'Commit'"
+    },
+    {
+      "text": "Ejecuta git ftp push",
+      "passed": true,
+      "evidence": "response.md: paso 7 'Push git ftp push'"
+    },
+    {
+      "text": "Mueve la tarea en Kanboard a Done",
+      "passed": false,
+      "evidence": "No menciona mover tarea Kanboard a Done"
+    },
+    {
+      "text": "Actualiza Desarrollo > Estado Actual con el hash desplegado",
+      "passed": false,
+      "evidence": "No menciona actualizar Desarrollo > Estado Actual en BookStack"
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 2,
+    "total": 5,
+    "pass_rate": 0.6
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 0,
+      "Write": 0,
+      "Bash": 0
+    },
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "outputs/response.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 1035,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 0,
+    "total_duration_seconds": 0
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

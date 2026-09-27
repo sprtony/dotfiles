@@ -1,0 +1,166 @@
+#!/usr/bin/env python3
+import os, sys, json, urllib.request
+
+URL = os.environ.get("KANBOARD_URL", "http://kanboard.avadig.com/jsonrpc.php")
+USER = os.environ.get("KANBOARD_USER", "jsonrpc")
+TOKEN = os.environ.get("KANBOARD_TOKEN", "ba615bd255aeddb6285ab15b24a938308f7f1513d95a94e09c263d3fdb21")
+
+
+def compact_project(p):
+    return {
+        "id": p.get("id"),
+        "name": p.get("name"),
+        "identifier": p.get("identifier") or "",
+        "active": p.get("is_active"),
+    }
+
+
+def compact_task(t):
+    return {
+        "id": t.get("id"),
+        "title": t.get("title"),
+        "project_id": t.get("project_id"),
+        "column_id": t.get("column_id"),
+        "owner_id": t.get("owner_id"),
+        "creator_id": t.get("creator_id"),
+        "date_due": t.get("date_due") or "",
+        "priority": t.get("priority"),
+        "status": t.get("status"),
+    }
+
+
+def call(method, params=None):
+    payload = {"jsonrpc": "2.0", "id": 1, "method": method}
+    if params is not None:
+        payload["params"] = params
+    req = urllib.request.Request(
+        URL,
+        data=json.dumps(payload).encode(),
+        headers={"Content-Type": "application/json"},
+    )
+    import base64
+    creds = base64.b64encode(f"{USER}:{TOKEN}".encode()).decode()
+    req.add_header("Authorization", f"Basic {creds}")
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            return json.loads(resp.read().decode())
+    except urllib.error.HTTPError as e:
+        return {"error": {"code": e.code, "message": e.reason, "body": e.read().decode()}}
+
+
+def parse_args(argv):
+    args = {}
+    i = 0
+    while i < len(argv):
+        a = argv[i]
+        if a.startswith("--"):
+            key = a[2:]
+            val = True
+            if i + 1 < len(argv) and not argv[i + 1].startswith("--"):
+                i += 1
+                val = argv[i]
+            args[key] = val
+        i += 1
+    return args
+
+
+def main():
+    if len(sys.argv) < 2:
+        print("uso: kanboard <subcomando> [opciones]", file=sys.stderr)
+        print("subcomandos: get-projects, get-project, get-tasks, get-board, create-project, create-task, update-task", file=sys.stderr)
+        sys.exit(1)
+
+    cmd = sys.argv[1]
+    opts = parse_args(sys.argv[2:])
+    raw = opts.pop("raw", False)
+
+    method = None
+    params = {}
+    result_key = None
+
+    if cmd == "get-projects":
+        method = "getAllProjects"
+        result_key = "projects"
+    elif cmd == "get-project":
+        pid = opts.get("project_id")
+        if not pid:
+            print("error: --project_id requerido", file=sys.stderr); sys.exit(1)
+        method = "getProjectById"; params = {"project_id": int(pid)}
+        result_key = "project"
+    elif cmd == "get-tasks":
+        pid = opts.get("project_id")
+        if not pid:
+            print("error: --project_id requerido", file=sys.stderr); sys.exit(1)
+        method = "getAllTasks"; params = {"project_id": int(pid), "status_id": [0, 1]}
+        if "status_id" in opts:
+            params["status_id"] = int(opts["status_id"])
+        result_key = "tasks"
+    elif cmd == "get-board":
+        pid = opts.get("project_id")
+        if not pid:
+            print("error: --project_id requerido", file=sys.stderr); sys.exit(1)
+        method = "getBoard"; params = {"project_id": int(pid)}
+        result_key = "board"
+    elif cmd == "create-project":
+        name = opts.get("name")
+        if not name:
+            print("error: --name requerido", file=sys.stderr); sys.exit(1)
+        method = "createProject"; params = {"name": name}
+        if "description" in opts:
+            params["description"] = opts["description"]
+        result_key = "id"
+    elif cmd == "create-task":
+        pid = opts.get("project_id"); title = opts.get("title")
+        if not pid or not title:
+            print("error: --project_id y --title requeridos", file=sys.stderr); sys.exit(1)
+        method = "createTask"
+        params = {"project_id": int(pid), "title": title}
+        for k in ["owner_id", "creator_id", "column_id", "priority", "color", "description", "date_due"]:
+            if k in opts:
+                params[k] = int(opts[k]) if k in ("owner_id", "creator_id", "column_id", "priority") else opts[k]
+        result_key = "id"
+    elif cmd == "update-task":
+        tid = opts.get("task_id")
+        if not tid:
+            print("error: --task_id requerido", file=sys.stderr); sys.exit(1)
+        method = "updateTask"; params = {"id": int(tid)}
+        for k in ["title", "owner_id", "creator_id", "column_id", "priority", "color", "description", "date_due", "status"]:
+            if k in opts:
+                params[k] = int(opts[k]) if k in ("owner_id", "creator_id", "column_id", "priority") else opts[k]
+        result_key = "bool"
+    else:
+        print(f"error: subcomando desconocido: {cmd}", file=sys.stderr)
+        sys.exit(1)
+
+    resp = call(method, params or None)
+
+    if "error" in resp:
+        print(json.dumps(resp, indent=2))
+        sys.exit(1)
+
+    result = resp.get("result")
+
+    if raw:
+        print(json.dumps(result, indent=2))
+        return
+
+    if result_key == "projects":
+        out = [compact_project(p) for p in result]
+    elif result_key == "tasks":
+        out = [compact_task(t) for t in result]
+    elif result_key == "project":
+        out = compact_project(result)
+    elif result_key == "id":
+        out = {"id": result}
+    elif result_key == "bool":
+        out = {"ok": result}
+    elif result_key == "board":
+        out = result
+    else:
+        out = result
+
+    print(json.dumps(out, indent=2, ensure_ascii=False))
+
+
+if __name__ == "__main__":
+    main()

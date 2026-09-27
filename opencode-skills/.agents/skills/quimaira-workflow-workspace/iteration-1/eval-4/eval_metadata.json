@@ -1,0 +1,9 @@
+{
+  "eval_id": 4,
+  "eval_name": "credentials-location",
+  "prompt": "¿Dónde se guardan las credenciales de un proyecto en Quimaira?",
+  "assertions": [
+    "Señala la página Administración > Credenciales",
+    "Menciona BookStack"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Señala la página Administración > Credenciales",
+      "passed": true,
+      "evidence": "response.md: 'Página Credenciales dentro del capítulo Administración'"
+    },
+    {
+      "text": "Menciona BookStack",
+      "passed": true,
+      "evidence": "response.md: 'Credenciales viven en BookStack'"
+    }
+  ],
+  "summary": {
+    "passed": 2,
+    "failed": 0,
+    "total": 2,
+    "pass_rate": 1.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 0,
+      "Write": 0,
+      "Bash": 0
+    },
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "outputs/response.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 811,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 0,
+    "total_duration_seconds": 0
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

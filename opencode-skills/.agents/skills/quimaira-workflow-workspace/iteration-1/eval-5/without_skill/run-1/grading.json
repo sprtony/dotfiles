@@ -1,0 +1,45 @@
+{
+  "expectations": [
+    {
+      "text": "Lista Diseño, Desarrollo, Comunicaciones, Video, Administración, Minutas, Ideas/Propuestas",
+      "passed": false,
+      "evidence": "response.md propone capítulos por fases (Planificación, Diseño, Desarrollo, QA, Deploy) no los 7 requeridos"
+    },
+    {
+      "text": "Asigna Ideas/Propuestas para versionar propuestas",
+      "passed": false,
+      "evidence": "response.md usa página 'Actas de reunión' y tags; no asigna Ideas/Propuestas a versionar propuestas"
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "failed": 2,
+    "total": 2,
+    "pass_rate": 0.0
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 0,
+      "Write": 0,
+      "Bash": 0
+    },
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "outputs/response.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 2366,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 0,
+    "total_duration_seconds": 0
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

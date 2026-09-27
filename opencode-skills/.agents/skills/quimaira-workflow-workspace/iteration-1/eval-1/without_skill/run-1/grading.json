@@ -1,0 +1,55 @@
+{
+  "expectations": [
+    {
+      "text": "Menciona BookStack como fuente de verdad del proyecto",
+      "passed": true,
+      "evidence": "response.md: 'BookStack (fuente de verdad)'"
+    },
+    {
+      "text": "Menciona Kanboard con el proyecto 'Proyectos'",
+      "passed": true,
+      "evidence": "response.md: 'Kanboard (gestión de tareas)' y columnas"
+    },
+    {
+      "text": "Menciona que el despliegue usa git-ftp",
+      "passed": true,
+      "evidence": "response.md: 'git-ftp + Git (control de versiones y despliegues)'"
+    },
+    {
+      "text": "Indica que el build se hace antes del push",
+      "passed": false,
+      "evidence": "No se indica que el build vaya antes del push; se menciona git-ftp push sin orden de build."
+    }
+  ],
+  "summary": {
+    "passed": 3,
+    "failed": 1,
+    "total": 4,
+    "pass_rate": 0.75
+  },
+  "execution_metrics": {
+    "tool_calls": {
+      "Read": 0,
+      "Write": 0,
+      "Bash": 0
+    },
+    "total_tool_calls": 0,
+    "total_steps": 1,
+    "files_created": [
+      "outputs/response.md"
+    ],
+    "errors_encountered": 0,
+    "output_chars": 4292,
+    "transcript_chars": 0
+  },
+  "timing": {
+    "executor_duration_seconds": 0,
+    "total_duration_seconds": 0
+  },
+  "claims": [],
+  "user_notes_summary": {
+    "uncertainties": [],
+    "needs_review": [],
+    "workarounds": []
+  }
+}

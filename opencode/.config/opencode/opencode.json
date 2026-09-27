@@ -3,7 +3,6 @@
   "plugin": [
     "@warp-dot-dev/opencode-warp",
     "opencode-gemini-auth",
-    "opencode-google-antigravity-auth",
     "opencode-mem"
   ],
   "provider": {
