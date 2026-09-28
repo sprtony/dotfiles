@@ -17,7 +17,6 @@ plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
 plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
-plug "lukechilds/zsh-nvm"
 plug "hcgraf/zsh-sudo"
 
 #alias
@@ -37,21 +36,12 @@ if command -v zoxide &> /dev/null; then
 fi
 
 if command -v fzf &> /dev/null; then
-  if [[ -f /usr/share/bash-completion/completions/fzf ]]; then
-    source /usr/share/bash-completion/completions/fzf
-  fi
+  [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
+  [[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
 fi
 
 # bun completions
-[ -s "/home/quimaira/.bun/_bun" ] && source "/home/quimaira/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # opencode
-export PATH=/home/quimaira/.opencode/bin:$PATH
-
-# pnpm
-export PNPM_HOME="/home/quimaira/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME/bin:"*) ;;
-  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
-esac
-# pnpm end
+export PATH="$HOME/.opencode/bin:$PATH"

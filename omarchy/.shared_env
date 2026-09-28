@@ -18,7 +18,10 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # pnpm
 export PNPM_HOME="$HOME/.local/share/pnpm"
-export PATH="$PNPM_HOME:$PATH"
+case ":$PATH:" in
+  *":$PNPM_HOME/bin:"*) ;;
+  *) export PATH="$PNPM_HOME/bin:$PATH" ;;
+esac
 
 # Brew (Linuxbrew)
 if [ -d "/home/linuxbrew/.linuxbrew" ]; then
@@ -31,7 +34,5 @@ export PATH="$HOME/.opencode/bin:$PATH"
 # Local bin
 export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
 
-# NVM (Carga estándar para Bash)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# Node lo gestiona mise (ver .zshrc y mise config.toml). NVM no se carga aquí
+# para evitar que compitan por el mismo binario `node`.
