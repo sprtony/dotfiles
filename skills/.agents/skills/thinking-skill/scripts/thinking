@@ -1,0 +1,19 @@
+#!/bin/sh
+
+if ! command -v pnpm >/dev/null 2>&1; then
+  printf 'Error: pnpm no está disponible en PATH.\n' >&2
+  exit 127
+fi
+
+pnpm_bin_dir="$(pnpm bin --global 2>/dev/null)" || {
+  printf 'Error: no pude localizar los binarios globales de pnpm.\n' >&2
+  exit 127
+}
+
+cli_path="$pnpm_bin_dir/sthink"
+if [ ! -x "$cli_path" ]; then
+  printf 'Error: falta el CLI sthink. Instala sequential-thinking-cli con pnpm.\n' >&2
+  exit 127
+fi
+
+exec "$cli_path" "$@"

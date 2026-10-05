@@ -1,2 +1,0 @@
-#!/bin/sh
-exec node /home/quimaira/.local/share/pnpm/store/v11/links/@/chrome-devtools-mcp/1.5.0/3b74344846bc448ad6c8f9ce748280e46c55ec0f6ae1bac3fde59ad974a1188b/node_modules/chrome-devtools-mcp/build/src/bin/chrome-devtools.js "$@"

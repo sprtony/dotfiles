@@ -1,2 +1,0 @@
-#!/bin/sh
-exec node /home/quimaira/.local/share/pnpm/global/v11/854c-1a05de64d2a-0c498189fd085749/node_modules/@21st-dev/cli/dist/index.js "$@"

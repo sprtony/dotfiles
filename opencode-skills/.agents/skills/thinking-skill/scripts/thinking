@@ -1,2 +1,0 @@
-#!/bin/sh
-exec /home/quimaira/.local/share/pnpm/global/v11/7777-1a05ddec464-a8b045b5ad45707d/node_modules/sequential-thinking-cli/dist/cli/bin.js "$@"
