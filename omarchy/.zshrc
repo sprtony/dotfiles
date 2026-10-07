@@ -45,3 +45,5 @@ fi
 
 # opencode
 export PATH="$HOME/.opencode/bin:$PATH"
+
+. "$HOME/.local/share/../bin/env"

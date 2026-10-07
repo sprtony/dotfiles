@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Wrapper a mcp2cli para el MCP server autonomo de Penpot.
+# Uso: penpot <comando> [args...]
+# Ejemplo: penpot list-projects
+
+if ! command -v mcp2cli &>/dev/null; then
+  echo "ERROR: mcp2cli no encontrado. Instalar con: uv tool install mcp2cli" >&2
+  exit 1
+fi
+
+exec mcp2cli @penpot "$@"
