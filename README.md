@@ -107,3 +107,9 @@ Instalador de dependencias en Omarchy:
 ./install-missing-skill-deps.sh
 ./install-missing-skill-deps.sh --remove-npm-globals # quitar CLIs de skills instaladas con npm antes de instalar con pnpm
 ```
+
+# WhatsApp desacoplado
+
+Módulo `whatsapp/`: helper standalone sobre `wacli`, sin depender del plugin de
+Omarchy. Incluye comando `whatsapp`, MCP `whatsapp-mcp`, skill y unidades
+systemd propias. Instalación y actualización en [`whatsapp/README.md`](whatsapp/README.md).

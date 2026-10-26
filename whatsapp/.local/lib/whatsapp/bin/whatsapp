@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+"""Entry point of the standalone local bridge between WhatsApp and wacli.
+
+The bridge lives in whatsapp_core.py beside this file. Imported as a module,
+its bytecode is cached, so a call does not recompile six thousand lines first:
+every send, refresh, and status poll starts about 0.2 s sooner.
+"""
+
+import os
+import sys
+
+# Compiled files stay out of the stow module. A relative XDG_CACHE_HOME is
+# invalid and ignored.
+_cache_home = os.environ.get("XDG_CACHE_HOME", "")
+if not os.path.isabs(_cache_home):
+    _cache_home = os.path.join(os.path.expanduser("~"), ".cache")
+if os.path.isabs(_cache_home):
+    sys.pycache_prefix = os.path.join(_cache_home, "whatsapp", "pycache")
+sys.path.insert(0, os.path.dirname(os.path.realpath(__file__)))
+
+from whatsapp_core import main  # noqa: E402
+
+if __name__ == "__main__":
+    raise SystemExit(main())

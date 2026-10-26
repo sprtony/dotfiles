@@ -1,0 +1,4 @@
+interface:
+  display_name: "WhatsApp local"
+  short_description: "Opera WhatsApp con guardrails vía wacli"
+  default_prompt: "Usa $whatsapp para inspeccionar mi archivo local o ejecutar una operación de WhatsApp claramente solicitada, de forma segura."
