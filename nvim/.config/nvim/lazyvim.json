@@ -1,0 +1,15 @@
+{
+  "extras": [
+    "lazyvim.plugins.extras.editor.neo-tree",
+    "lazyvim.plugins.extras.lang.php",
+    "lazyvim.plugins.extras.lang.tailwind",
+    "lazyvim.plugins.extras.lang.json",
+    "lazyvim.plugins.extras.dap.core",
+    "lazyvim.plugins.extras.test.core"
+  ],
+  "install_version": 8,
+  "news": {
+    "NEWS.md": "10960"
+  },
+  "version": 8
+}

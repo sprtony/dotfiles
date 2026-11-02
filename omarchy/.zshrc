@@ -1,17 +1,17 @@
 # Created by Zap installer
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 
-# Cargar variables compartidas
+# Variables compartidas (pnpm, cargo, opencode, secretos)
 if [ -f ~/.shared_env ]; then
   . ~/.shared_env
 fi
 
-# p10k
+# p10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-#plugins
+# Plugins
 plug "zsh-users/zsh-autosuggestions"
 plug "zap-zsh/supercharge"
 plug "zap-zsh/zap-prompt"
@@ -19,31 +19,8 @@ plug "zsh-users/zsh-syntax-highlighting"
 plug "romkatv/powerlevel10k"
 plug "hcgraf/zsh-sudo"
 
-#alias
-alias ls="lsd"
-alias cat="bat"
+# Alias específicos de Omarchy
 alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
 
-#load p10k
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-if command -v mise &> /dev/null; then
-  eval "$(mise activate zsh)"
-fi
-
-if command -v zoxide &> /dev/null; then
-  eval "$(zoxide init zsh)"
-fi
-
-if command -v fzf &> /dev/null; then
-  [[ -r /usr/share/fzf/completion.zsh ]] && source /usr/share/fzf/completion.zsh
-  [[ -r /usr/share/fzf/key-bindings.zsh ]] && source /usr/share/fzf/key-bindings.zsh
-fi
-
-# bun completions
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# opencode
-export PATH="$HOME/.opencode/bin:$PATH"
-
-. "$HOME/.local/share/../bin/env"
+# Init común (aliases, p10k, mise, zoxide, fzf)
+[ -f ~/.config/shell/zsh-init.zsh ] && source ~/.config/shell/zsh-init.zsh

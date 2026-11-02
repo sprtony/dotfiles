@@ -1,6 +1,24 @@
-nvim/.config/nvim/plugin/
+# Nvim
 nvim/.config/TabNine
 nvim/.config/composer
-ranger/.config/ranger/plugins/
+# Generado por Omarchy (enlace al tema actual)
+nvim/.config/nvim/lua/plugins/theme.lua
+
+# Lazygit
 lazygit/.config/lazygit/state.yml
-gemini/.gemini/gcp*
+
+# Secretos
+.env
+**/.env
+
+# Python
+__pycache__/
+*.py[cod]
+
+# OpenCode: estado generado en runtime
+opencode/.config/opencode/node_modules/
+opencode/.config/opencode/service.json
+opencode/.config/opencode/herdr-opencode/
+
+# Temporales
+*.bak.*

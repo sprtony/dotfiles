@@ -1,12 +1,54 @@
-# Requisitos
-- zsh
-- stow
-- git-ftp
-- zip
-- unzip
-- 7zip
-- rip-grep
-- fd-find
+# Dotfiles
+
+Configuración personal compartida entre Omarchy (Linux), macOS y Windows.
+Cada máquina clona el repo en `~/.dotfiles`; los symlinks son relativos a esa ruta.
+
+## Estructura
+
+| Módulo | Contenido | Plataforma |
+|---|---|---|
+| `shell/` | `.shared_env`, `.p10k.zsh` e init común de zsh | Todas |
+| `git/` | `.gitconfig` base con delta y LFS | Todas |
+| `omarchy/` | `.zshrc` y overrides de OpenCode para Omarchy | Linux |
+| `mac/` | `.zshrc` específico de macOS | macOS |
+| `nvim/` | Configuración completa de Neovim/LazyVim | Todas |
+| `opencode/` | Configuración, plugins, skills y TUI de OpenCode | Todas |
+| `skills/` | Skills compartidas en `~/.agents/skills` | Todas |
+| `bat/`, `delta/`, `lazygit/`, `lazydocker/` | Configs de herramientas | Todas |
+| `warp/` | Temas de Warp en `~/.warp/themes` | Todas |
+| `whatsapp/` | Helper, MCP, skill y systemd | Solo Linux |
+| `windows/` | PowerShell, Terminal, YASB y VSCodium | Windows |
+| `scripts/omarchy/` | Instaladores y actualizadores Linux | Linux |
+| `profiles/` | Lista de módulos por perfil | — |
+| `bootstrap.sh` | Aplica un perfil con stow | — |
+
+## Instalación
+
+Requisitos: `zsh`, `stow`, `git`, `git-ftp`, `zip`, `unzip`, `7zip`, `ripgrep`, `fd`.
+
+```sh
+git clone git@github.com:sprtony/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles
+./bootstrap.sh omarchy
+```
+
+En macOS:
+
+```sh
+./bootstrap.sh mac
+```
+
+Para reaplicar después de mover archivos:
+
+```sh
+./bootstrap.sh omarchy --restow
+```
+
+Stow no sobrescribe archivos existentes. Si hay conflicto, mueve o respalda el
+archivo real antes de ejecutar el bootstrap. No uses `stow --adopt` sin revisar
+el resultado.
+
+## Herramientas
 
 # [Zap](https://github.com/zap-zsh/zap)
 ```sh
@@ -62,26 +104,44 @@ go install github.com/jesseduffield/lazygit@latest
 go install github.com/jesseduffield/lazydocker@latest
 ```
 
-# Install Antigravity
-copiar los scripts en /usr/local/bin
+## OpenCode
 
+La configuración base vive en `opencode/.config/opencode/`.
+Los overrides de Omarchy (MCP de PhotoCraft) se cargan con `OPENCODE_CONFIG`
+desde `omarchy/.config/opencode/opencode.omarchy.json`.
 
-# [Warp Keybinding (GNOME)](https://www.warp.dev/)
+Archivos generados que no se versionan: `node_modules/`, `service.json`,
+`herdr-opencode/`, `package.json` y `package-lock.json`.
+
+## Neovim
+
+La configuración completa está en `nvim/.config/nvim/`, incluyendo
+`lazy-lock.json`. Los plugins se instalan al abrir Neovim.
+
+## Antigravity
+
+Los scripts están en `scripts/omarchy/`. Copiarlos a `/usr/local/bin`:
+
+```sh
+sudo cp scripts/omarchy/update-antigravity scripts/omarchy/update-antigravity-ide /usr/local/bin/
+```
+
+## [Warp Keybinding (GNOME)](https://www.warp.dev/)
 ```sh
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name 'Warp'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command 'warp-terminal'
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Super>Return'
 ```
 
-# Dependencias de Skills
+## Dependencias de Skills
 
-## Core
-- `opencode` — CLI del agente (instalar según instrucciones oficiales).
-- `python3` + `pip` — scripts de bookstack, kanboard, skill-creator.
-- `node` + `pnpm` — CLIs basadas en Node; instalar paquetes globales con pnpm.
+### Core
+- `opencode` — CLI del agente.
+- `python3` + `pip` — scripts de BookStack, Kanboard y skill-creator.
+- `node` + `pnpm` — único gestor de paquetes Node global.
 - `npx` — find-skills y CLIs temporales.
 
-## Skills específicas
+### Skills específicas
 
 | Skill | CLI / dependencia | Instalación típica |
 |---|---|---|
@@ -90,7 +150,7 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 | context7-skill | `ctx7` | `pnpm add -g ctx7` |
 | excel-skill | `excel-cli` | `cargo install excel-cli --locked` |
 | find-skills | `npx skills` | incluido con Node |
-| git-ftp-deploy | `git`, `git-ftp`, `pnpm/npm/yarn` | `sudo apt install git-ftp` + gestor de paquetes Node |
+| git-ftp-deploy | `git`, `git-ftp`, `pnpm` | `sudo apt install git-ftp` + pnpm |
 | git-ftp-skill | `git`, `git-ftp` | `sudo apt install git-ftp` |
 | imagemagick-conversion | `magick` (ImageMagick) | `sudo apt install imagemagick` |
 | kanboard-skill | `python3` | nativo |
@@ -100,15 +160,22 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 | playwright-cli | `@playwright/cli` | `pnpm add -g @playwright/cli@latest` |
 | skill-creator | `python3` | nativo |
 | thinking-skill | `sequential-thinking-cli` | `pnpm add -g sequential-thinking-cli` |
-| usql-skill | `usql` | descargar release oficial o `go install` |
+| usql-skill | `usql` | release oficial o `go install` |
 
 Instalador de dependencias en Omarchy:
+
 ```sh
-./install-missing-skill-deps.sh
-./install-missing-skill-deps.sh --remove-npm-globals # quitar CLIs de skills instaladas con npm antes de instalar con pnpm
+./scripts/omarchy/install-missing-skill-deps.sh
+./scripts/omarchy/install-missing-skill-deps.sh --remove-npm-globals
 ```
 
-# WhatsApp desacoplado
+## Seguridad
+
+- Los secretos viven fuera del repo: `~/.config/secrets/keys.env` con permisos `600`.
+- Nunca versionar `.env`, tokens ni `service.json`.
+- Revisar `git status` antes de cada commit.
+
+## WhatsApp desacoplado
 
 Módulo `whatsapp/`: helper standalone sobre `wacli`, sin depender del plugin de
 Omarchy. Incluye comando `whatsapp`, MCP `whatsapp-mcp`, skill y unidades
