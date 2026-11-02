@@ -3,7 +3,14 @@ import os, sys, json, urllib.request
 
 URL = os.environ.get("KANBOARD_URL", "http://kanboard.avadig.com/jsonrpc.php")
 USER = os.environ.get("KANBOARD_USER", "jsonrpc")
-TOKEN = os.environ.get("KANBOARD_TOKEN", "ba615bd255aeddb6285ab15b24a938308f7f1513d95a94e09c263d3fdb21")
+TOKEN = os.environ.get("KANBOARD_TOKEN", "")
+
+if not TOKEN:
+    sys.exit(
+        "error: falta KANBOARD_TOKEN.\n"
+        "       Añade KANBOARD_TOKEN=... en ~/.config/secrets/keys.env\n"
+        "       (token en https://kanboard.avadig.com/?controller=ConfigController&action=application)"
+    )
 
 
 def compact_project(p):

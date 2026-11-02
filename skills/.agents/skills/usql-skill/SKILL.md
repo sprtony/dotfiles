@@ -1,3 +1,8 @@
+---
+name: usql-skill
+description: Manage and query multiple SQL databases (PostgreSQL, MySQL, SQLite, Oracle, etc.) using the usql CLI.
+---
+
 # USQL Skill
 
 Universal command-line interface for SQL databases.

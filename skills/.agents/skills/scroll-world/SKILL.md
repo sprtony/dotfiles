@@ -1,4 +1,7 @@
-# Skill: scroll-world
+---
+name: scroll-world
+description: Crea landing pages scroll-scrubbed con camara animada usando HyperFrames, GSAP e imagenes gratuitas de Pollinations.ai.
+---
 
 # scroll-world
 

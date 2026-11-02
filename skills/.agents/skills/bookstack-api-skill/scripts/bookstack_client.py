@@ -17,12 +17,18 @@ if os.path.exists(env_path):
                 key, value = line.strip().split("=", 1)
                 config[key] = value
 
-BASE_URL = config.get("BOOKSTACK_URL", "https://bookstack.avadig.com/api").rstrip('/')
-TOKEN_ID = config.get("BOOKSTACK_TOKEN_ID")
-TOKEN_SECRET = config.get("BOOKSTACK_TOKEN_SECRET")
+# Prioridad: variables de entorno (~/.config/secrets/keys.env) > .env local de la skill
+BASE_URL = (
+    os.environ.get("BOOKSTACK_URL")
+    or config.get("BOOKSTACK_URL")
+    or "https://bookstack.avadig.com/api"
+).rstrip('/')
+TOKEN_ID = os.environ.get("BOOKSTACK_TOKEN_ID") or config.get("BOOKSTACK_TOKEN_ID")
+TOKEN_SECRET = os.environ.get("BOOKSTACK_TOKEN_SECRET") or config.get("BOOKSTACK_TOKEN_SECRET")
 
 if not TOKEN_ID or not TOKEN_SECRET:
-    print("error: Credenciales no encontradas en scripts/.env")
+    print("error: Faltan BOOKSTACK_TOKEN_ID / BOOKSTACK_TOKEN_SECRET")
+    print("       Define las variables o crea ~/.config/secrets/keys.env")
     sys.exit(1)
 
 headers = {
