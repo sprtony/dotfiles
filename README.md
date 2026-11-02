@@ -22,9 +22,24 @@ Cada máquina clona el repo en `~/.dotfiles`; los symlinks son relativos a esa r
 | `profiles/` | Lista de módulos por perfil | — |
 | `bootstrap.sh` | Aplica un perfil con stow | — |
 
-## Instalación
+## Aplicaciones y CLIs necesarias
 
-Requisitos: `zsh`, `stow`, `git`, `git-ftp`, `zip`, `unzip`, `7zip`, `ripgrep`, `fd`.
+| Ámbito | Herramientas |
+|---|---|
+| Núcleo | `zsh`, `stow`, `git`, `git-lfs`, `git-ftp`, `curl`, `zip`, `unzip`, `7z`, `rg`, `fd` |
+| Shell | `bat`, `lsd`, `fzf`, `mise`, `zoxide`, `delta` |
+| Editor | `nvim`, `bob` (opcional), `lazygit`, `lazydocker` |
+| Node | `node`, `pnpm`, `npx` |
+| Agente | `opencode` |
+| Python | `python3`, `pip` |
+| Skills | `magick`, `php`, `composer`, `usql`, Chrome/Chromium |
+| WhatsApp (Linux) | `wacli` |
+| PhotoCraft (Omarchy) | `photocraft-cli` dentro del AppImage |
+| Opcional | `warp`, `bat-extras` |
+
+Comandos de instalación abajo. El instalador de skills cubre las CLIs Node.
+
+## Instalación
 
 ```sh
 git clone git@github.com:sprtony/dotfiles.git ~/.dotfiles
@@ -50,56 +65,56 @@ el resultado.
 
 ## Herramientas
 
-# [Zap](https://github.com/zap-zsh/zap)
+### [Zap](https://github.com/zap-zsh/zap)
 ```sh
 zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) --branch release-v1
 ```
 
-# [Rust](https://doc.rust-lang.org/book/title-page.html)
+### [Rust](https://doc.rust-lang.org/book/title-page.html)
 ```sh
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
-# [Go](https://go.dev/)
+### [Go](https://go.dev/)
 ```sh
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
 sudo apt install golang-go
 ```
 
-# [Bat](https://github.com/sharkdp/bat)
+### [Bat](https://github.com/sharkdp/bat)
 ```sh
 cargo install --locked bat
 bat cache --build
 ```
 
-# [Bat-extras](https://github.com/eth-p/bat-extras)
+### [Bat-extras](https://github.com/eth-p/bat-extras)
 ```sh
 brew install bat-extras
 pacman -S bat-extras
 ```
 
-# [Lsd](https://github.com/lsd-rs/lsd)
+### [Lsd](https://github.com/lsd-rs/lsd)
 ```sh
 cargo install lsd
 ```
 
-# [Bob](https://github.com/MordechaiHadad/bob)
+### [Bob](https://github.com/MordechaiHadad/bob)
 ```sh
 cargo install bob-nvim
 ```
 
-# [Delta](https://dandavison.github.io/delta/introduction.html)
+### [Delta](https://dandavison.github.io/delta/introduction.html)
 ```sh
 cargo install git-delta
 ```
 
-# [Lazygit](https://github.com/jesseduffield/lazygit)
+### [Lazygit](https://github.com/jesseduffield/lazygit)
 ```sh
 go install github.com/jesseduffield/lazygit@latest
 ```
 
-# [Lazydocker](https://github.com/jesseduffield/lazydocker)
+### [Lazydocker](https://github.com/jesseduffield/lazydocker)
 ```sh
 go install github.com/jesseduffield/lazydocker@latest
 ```
