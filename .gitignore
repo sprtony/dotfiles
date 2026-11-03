@@ -19,6 +19,10 @@ __pycache__/
 opencode/.config/opencode/node_modules/
 opencode/.config/opencode/service.json
 opencode/.config/opencode/herdr-opencode/
+opencode/.config/opencode/agents/
+opencode/.config/opencode/commands/
+opencode/.config/opencode/skills/
+opencode/.config/opencode/plugins/caveman/
 
 # Temporales
 *.bak.*
