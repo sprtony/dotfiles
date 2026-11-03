@@ -184,6 +184,12 @@ Instalador de dependencias en Omarchy:
 ./scripts/omarchy/install-missing-skill-deps.sh --remove-npm-globals
 ```
 
+Instalador de herramientas en macOS:
+
+```sh
+./scripts/mac/install-tools.sh
+```
+
 ## Seguridad
 
 - Los secretos viven fuera del repo: `~/.config/secrets/keys.env` con permisos `600`.
